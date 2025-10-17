@@ -426,7 +426,7 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 10}
   m_EdgeRadius: 0
---- !u!1 &237224600
+--- !u!1 &824978785
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -434,51 +434,39 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 237224602}
-  - component: {fileID: 237224601}
+  - component: {fileID: 824978787}
+  - component: {fileID: 824978786}
   m_Layer: 0
-  m_Name: Clicker
+  m_Name: ReferenceTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &237224601
+--- !u!114 &824978786
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237224600}
+  m_GameObject: {fileID: 824978785}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3d805c20b88f2044c9cf6ff0ecb52a48, type: 3}
+  m_Script: {fileID: 11500000, guid: 16436cbba8cc1114686215dc75cb04b4, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Clicker
-  action:
-    m_Name: Action
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 061f0f1a-740a-4d06-9b6f-f38ecc21eecf
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings:
-    - m_Name: 
-      m_Id: 7a95a4b8-2b71-48b6-8eb8-785715c314bf
-      m_Path: <Mouse>/leftButton
-      m_Interactions: 
-      m_Processors: 
-      m_Groups: 
-      m_Action: Action
-      m_Flags: 0
-    m_Flags: 0
---- !u!4 &237224602
+  m_EditorClassIdentifier: Assembly-CSharp::FoodReferenceTable
+  referenceTable:
+  - prefab: {fileID: 0}
+    foodType: 0
+  - prefab: {fileID: 2892344976013142339, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+    foodType: 1
+--- !u!4 &824978787
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237224600}
+  m_GameObject: {fileID: 824978785}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -770,11 +758,69 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 10}
   m_EdgeRadius: 0
+--- !u!1001 &6880649161186067955
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1211048719209625555, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2187908943870000577, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
+      propertyPath: m_Name
+      value: Clicker
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cfca111a29aa7a24a97643b3ebd87847, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 911690879}
-  - {fileID: 237224602}
+  - {fileID: 6880649161186067955}
   - {fileID: 79864143}
   - {fileID: 971742026}
+  - {fileID: 824978787}
