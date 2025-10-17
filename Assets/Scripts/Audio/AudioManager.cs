@@ -3,17 +3,20 @@ using System.Collections;
 using UnityEngine;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
+using NUnit.Framework;
 
 [Serializable]
 public class AudioType
 {
     public string title;
     [SerializeField] AudioClip[] audioClips;
+    [SerializeField] AudioSource source;
     [SerializeField] float minPitch = 1;
     [SerializeField] float maxPitch = 1;
 
-    public void Play(AudioSource source, float volume = 1, bool pitchVariance = true, float stereoPan = 0)
+    public void Play(float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false)
     {
+        if(!interrupt && source.isPlaying) { return; }
         source.clip = audioClips[Random.Range(0, audioClips.Length)];
         source.volume = volume;
         if (pitchVariance)
@@ -38,8 +41,7 @@ public class AudioType
 public class AudioManager : MonoBehaviour
 {
     [SerializeField] AudioType[] audioTypes;
-    List<AudioSource> characterSources = new();
-    public static AudioManager Instance;
+    public static AudioManager Instance = null;
     public Action<string, string, AudioClip> voicelineFinished;
     public Action<string> audioFinished;
     AudioSource ambiantSource;
@@ -57,14 +59,20 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
         }
         ambiantSource = GetComponent<AudioSource>();
+        SetAmbiance(startAmbiance);
     }
 
     /// <summary>
     /// Plays the selected audio from the audioSource, it finds the audio by title. You can modify volume, panning and turn off pitch variance
     /// </summary>
-    public void PlayAudio(AudioSource source, string title, float volume = 1, bool pitchVariance = true, float stereoPan = 0)
+    public void PlayAudio(string title, float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false)
     {
-        FindAudioType(title).Play(source, volume, pitchVariance, stereoPan);
+        FindAudioType(title).Play(volume, pitchVariance, stereoPan, interrupt);
+    }
+
+    public void PlayAudioSimple(string title)
+    {
+        PlayAudio(title);
     }
 
     AudioType FindAudioType(string title)
@@ -80,10 +88,12 @@ public class AudioManager : MonoBehaviour
         return default;
     }
 
-    public void SetAmbiance(AudioClip clip, float volume)
+    public void SetAmbiance(AudioClip newClip, float newVolume = 1)
     {
-        ambiantSource.clip = clip;
-        ambiantSource.volume = volume;
+        if(newClip == null) { return; }
+        ambiantSource.clip = newClip;
+        ambiantSource.volume = newVolume;
         ambiantSource.loop = true;
+        ambiantSource.Play();
     }
 }
