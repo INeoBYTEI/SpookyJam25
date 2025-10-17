@@ -33,6 +33,10 @@ public class InsanityManager : MonoBehaviour
             {
                 @event.InvokeEvent();
             }
+            else if(@event.hasTriggerd)
+            {
+                @event.hasTriggerd = false;
+            }
         }
     }
 
