@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.UIElements;
 
 public class Clicker : MonoBehaviour
 {
@@ -10,8 +11,15 @@ public class Clicker : MonoBehaviour
     HashSet<Clickable> clickedClickables = new HashSet<Clickable>();
     HashSet<Clickable> hoverClickables = new HashSet<Clickable>();
 
-    bool mouseDown;
+
+    public static Clicker Instance { get; private set; }
     public static Vector2 MousePos { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null) { Instance = this; }
+        else { Destroy(this); }
+    }
 
     private void OnEnable()
     {
@@ -26,7 +34,7 @@ public class Clicker : MonoBehaviour
 
         GetClickables((clickable) =>
         {
-            clickable.Hover(); 
+            clickable.Hover();
             newHovering.Add(clickable);
         });
 
@@ -48,8 +56,6 @@ public class Clicker : MonoBehaviour
 
     private void Click(InputAction.CallbackContext context)
     {
-        mouseDown = true;
-
         GetClickables((clickable) =>
         {
             clickable.OnClick();
@@ -59,8 +65,6 @@ public class Clicker : MonoBehaviour
 
     private void ReleaseClick(InputAction.CallbackContext context)
     {
-        mouseDown = false;
-
         GetClickables((clickable) =>
         {
             if (clickedClickables.Contains(clickable)) { clickable.OnReleaseSame(); }
@@ -81,6 +85,11 @@ public class Clicker : MonoBehaviour
                 action(clickable);
             }
         }
+    }
+
+    public void AddClicked(Clickable clickable)
+    {
+        clickedClickables.Add(clickable);
     }
 
     private void OnDisable()
