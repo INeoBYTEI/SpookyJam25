@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class WaterBottle : Clickable
@@ -5,6 +6,7 @@ public class WaterBottle : Clickable
     Animator animator;
     [SerializeField] AnimationClip noSprayClip;
     [SerializeField] AnimationClip sprayClip;
+    public Action Sprayed;
 
     void Start()
     {
@@ -19,5 +21,6 @@ public class WaterBottle : Clickable
     public override void OnReleaseSame()
     {
         animator.Play(noSprayClip.name);
+        Sprayed?.Invoke();
     }
 }
