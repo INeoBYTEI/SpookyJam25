@@ -67,8 +67,8 @@ public class Clicker : MonoBehaviour
     {
         GetClickables((clickable) =>
         {
+            clickable.OnRelease();
             if (clickedClickables.Contains(clickable)) { clickable.OnReleaseSame(); }
-            else { clickable.OnRelease(); }
         });
 
         clickedClickables.Clear();
