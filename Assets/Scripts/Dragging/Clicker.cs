@@ -11,6 +11,7 @@ public class Clicker : MonoBehaviour
     HashSet<Clickable> hoverClickables = new HashSet<Clickable>();
 
     bool mouseDown;
+    public static Vector2 MousePos { get; private set; }
 
     private void OnEnable()
     {
@@ -25,10 +26,14 @@ public class Clicker : MonoBehaviour
 
         GetClickables((clickable) =>
         {
-            if (mouseDown && clickedClickables.Contains(clickable)) { clickable.OnDrag(); }
-            else { clickable.Hover(); }
+            clickable.Hover(); 
             newHovering.Add(clickable);
         });
+
+        foreach (Clickable clickedClickable in clickedClickables)
+        {
+            clickedClickable.OnDrag();
+        }
 
         foreach (Clickable clickable in hoverClickables)
         {
@@ -67,7 +72,8 @@ public class Clicker : MonoBehaviour
 
     private void GetClickables(Action<Clickable> action)
     {
-        Collider2D[] hits = Physics2D.OverlapPointAll(Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue()));
+        MousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Collider2D[] hits = Physics2D.OverlapPointAll(MousePos);
         foreach (Collider2D hit in hits)
         {
             if (hit.gameObject.TryGetComponent<Clickable>(out Clickable clickable))

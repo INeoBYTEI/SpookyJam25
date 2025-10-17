@@ -2,33 +2,15 @@ using UnityEngine;
 
 public class Draggable : Clickable
 {
+    Vector2 offset;
+
     public override void OnClick()
     {
-        Debug.Log("OnClick");
+        offset = new Vector2(transform.position.x, transform.position.y) - Clicker.MousePos;
     }
 
     public override void OnDrag()
     {
-        Debug.Log("OnDrag");
-    }
-
-    public override void Hover()
-    {
-        Debug.Log("hover");
-    }
-
-    public override void OnRelease()
-    {
-        Debug.Log("OnRelease");
-    }
-
-    public override void OnReleaseSame()
-    {
-        Debug.Log("OnReleaseSame");
-    }
-
-    public override void HoverLeave()
-    {
-        Debug.Log("HoverLeave");
+        transform.position = Clicker.MousePos + offset;
     }
 }
