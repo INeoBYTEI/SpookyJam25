@@ -4,9 +4,9 @@ public class Dispenser : MonoBehaviour
 {
     public bool isDispensing = false;
     private Animator animator;
-    void Start()
+    void Awake()
     {
-        animator = GetComponent<Animator>();
+        animator = this.GetComponent<Animator>();
     }
     public void ToggleDispenser()
     {
