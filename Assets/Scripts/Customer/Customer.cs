@@ -23,7 +23,7 @@ public class Customer : MonoBehaviour
     }
 
     public Difficulty currentDifficulty = Difficulty.EASY;
-    [SerializeField] private CustomerState currentState = CustomerState.ARRIVING;
+    public CustomerState currentState = CustomerState.ARRIVING;
 
     [SerializeField] private FoodReferenceTable foodReferenceTable;
     [SerializeField] private GameObject iconPrefab;

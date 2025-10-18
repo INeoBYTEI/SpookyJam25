@@ -23,12 +23,24 @@ public class InsanityManager : MonoBehaviour
 {
     public float insanity = 0;
     [SerializeField] InsanityEvent[] insanityEvents;
-    [SerializeField] Customer currentCustomer; //TODO Get this from CustomerHandler
+    Customer currentCustomer;
 
     [SerializeField] float easyInsanityPerSec = 1;
     [SerializeField] float mediumInsanityPerSec = 2;
     [SerializeField] float hardInsanityPerSec = 3;
     [SerializeField] float insanityRecoverPerSec = 1;
+    CustomerHandler customerHandler;
+
+    void Start()
+    {
+        customerHandler = FindFirstObjectByType<CustomerHandler>();
+        customerHandler.OnCustomerSpawned += SetCurrentCustomer;
+    }
+
+    void SetCurrentCustomer(Customer newCustomer)
+    {
+        currentCustomer = newCustomer;
+    }
 
     void Update()
     {
@@ -46,7 +58,11 @@ public class InsanityManager : MonoBehaviour
 
         if (currentCustomer != null)
         {
-            AddInsanityBasedOnCustomerDifficulty(currentCustomer);
+            if (currentCustomer.currentState == Customer.CustomerState.ORDERING ||
+            currentCustomer.currentState == Customer.CustomerState.WAITING)
+            {
+                AddInsanityBasedOnCustomerDifficulty(currentCustomer);
+            }
         }
         else
         {
