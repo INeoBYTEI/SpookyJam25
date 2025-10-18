@@ -5,28 +5,28 @@ public class Food : Draggable
 {
     public FoodType type;
 
-    HashSet<Combiner> combiners = new();
+    HashSet<FoodInteractable> interactbales = new();
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Combiner>(out Combiner combiner))
+        if (collision.gameObject.TryGetComponent<FoodInteractable>(out FoodInteractable combiner))
         {
-            if (!combiners.Contains(combiner)) { combiners.Add(combiner); }
+            if (!interactbales.Contains(combiner)) { interactbales.Add(combiner); }
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<Combiner>(out Combiner combiner))
+        if (collision.gameObject.TryGetComponent<FoodInteractable>(out FoodInteractable combiner))
         {
-            if (combiners.Contains(combiner)) { combiners.Remove(combiner); }
+            if (interactbales.Contains(combiner)) { interactbales.Remove(combiner); }
         }
     }
 
     public override void OnRelease()
     {
         base.OnRelease();
-        foreach (Combiner combiner in combiners)
+        foreach (FoodInteractable combiner in interactbales)
         {
             if (combiner == null) { continue; }
             combiner.AddFood(type);

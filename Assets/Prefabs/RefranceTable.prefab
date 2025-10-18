@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5032398573908221297
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7544715387398644320}
+  - component: {fileID: 2677780369171194383}
+  m_Layer: 0
+  m_Name: RefranceTable
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7544715387398644320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032398573908221297}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2677780369171194383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5032398573908221297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16436cbba8cc1114686215dc75cb04b4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FoodReferenceTable
+  referenceTable:
+  - prefab: {fileID: 0}
+    sprite: {fileID: 0}
+    foodType: 0
+  - prefab: {fileID: 4449716898510149748, guid: 44ef87e852a0ce84d9cf7620fc294277, type: 3}
+    sprite: {fileID: 21300000, guid: fd5c01534830bf841871777cfd660e8d, type: 3}
+    foodType: 1
+  - prefab: {fileID: 1298013283525586882, guid: 2b1c393c1e6ab304f86cd94c313bf261, type: 3}
+    sprite: {fileID: 21300000, guid: 3233afe4c448d4eb198cfb1ca54feb3b, type: 3}
+    foodType: 2
+  - prefab: {fileID: 3785420628029519768, guid: b1cc4f6310889124ba33cedbc64a51c0, type: 3}
+    sprite: {fileID: 21300000, guid: 1ee20322f16cdf545b5b1398c9c85856, type: 3}
+    foodType: 3

@@ -25,5 +25,6 @@ public class Draggable : Clickable
     public override void OnReleaseSame()
     {
         rb.gravityScale = 1;
+        rb.linearVelocity = Vector2.zero;
     }
 }

@@ -7,7 +7,7 @@ public class DragSpawner : Clickable
 
     public override void OnClick()
     {
-        Food food = FoodReferenceTable.Instance.Spawn(foodType, transform.position);
+        Food food = FoodReferenceTable.Instance.SpawnFood(foodType, transform.position);
         if (food != null) { Clicker.Instance.AddClicked(food); }
     }
 }

@@ -14,7 +14,7 @@ public class FoodReferenceTable : MonoBehaviour
         else { Destroy(this); }
     }
 
-    public Food Spawn(FoodType foodType, Vector3 position)
+    public Food SpawnFood(FoodType foodType, Vector3 position)
     {
         GameObject gameObject = Instantiate(referenceTable[(int)foodType].prefab, position, Quaternion.identity);
         if ( gameObject.TryGetComponent<Food>(out Food food))
@@ -25,12 +25,18 @@ public class FoodReferenceTable : MonoBehaviour
 
         return food;
     }
+
+    public Sprite GetSprite(FoodType foodType)
+    {
+        return referenceTable[(int)foodType].sprite;
+    }
 }
 
 [Serializable]
 public struct FoodPrefabPair
 {
     public GameObject prefab;
+    public Sprite sprite;
     public FoodType foodType;
 }
 

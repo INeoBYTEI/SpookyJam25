@@ -1,15 +1,13 @@
-using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 
-public class Combiner : MonoBehaviour
+public class RecipeCheck : FoodInteractable
 {
     [SerializeField] List<Recipe> recipes = new List<Recipe>();
-    [SerializeField] List<FoodType> stored = new();
 
-
-    public void AddFood(FoodType food)
+    public override void OnFoodAdded(FoodType food)
     {
-        stored.Add(food);
         CheckRecipes();
     }
 
@@ -28,7 +26,7 @@ public class Combiner : MonoBehaviour
             }
             if (i == recipe.required.Count)
             {
-                FoodReferenceTable.Instance.Spawn(recipe.result, transform.position);
+                RecipeMatched(recipe.result);
                 stored.Clear();
                 return;
             }
@@ -38,9 +36,11 @@ public class Combiner : MonoBehaviour
         {
             foreach (FoodType food in stored)
             {
-                FoodReferenceTable.Instance.Spawn(food, transform.position);
+                FoodReferenceTable.Instance.SpawnFood(food, transform.position);
             }
             stored.Clear();
         }
     }
+
+    public virtual void RecipeMatched(FoodType food) { }
 }
