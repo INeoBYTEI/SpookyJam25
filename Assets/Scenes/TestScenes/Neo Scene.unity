@@ -816,9 +816,21 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1756465308}
     - target: {fileID: 248478783244094512, guid: 26aa33459211d474a82d18b20162d154, type: 3}
+      propertyPath: iconPrefab
+      value: 
+      objectReference: {fileID: 7303926315570008057, guid: 6d1ae3408c194114e9186f1f4e536dc8, type: 3}
+    - target: {fileID: 248478783244094512, guid: 26aa33459211d474a82d18b20162d154, type: 3}
+      propertyPath: hungerLevel
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 248478783244094512, guid: 26aa33459211d474a82d18b20162d154, type: 3}
       propertyPath: orderIconUI
       value: 
       objectReference: {fileID: 1596638399}
+    - target: {fileID: 248478783244094512, guid: 26aa33459211d474a82d18b20162d154, type: 3}
+      propertyPath: foodReferenceTable
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4568159424836208227, guid: 26aa33459211d474a82d18b20162d154, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

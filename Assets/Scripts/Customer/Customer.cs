@@ -75,7 +75,7 @@ public class Customer : MonoBehaviour
         // > Display order UI
         orderUI.SetActive(true);
         // > Set order icon
-
+        GenerateOrder();
         // > Play ordering sound
         yield return new WaitForSeconds(5f);
         orderUI.SetActive(false);
@@ -118,10 +118,11 @@ public class Customer : MonoBehaviour
         
         for (int i = 0; i < hungerLevel; i++)
         {
-            int randomIndex = Random.Range(0, System.Enum.GetValues(typeof(FoodType)).Length);
+            int randomIndex = Random.Range(1, System.Enum.GetValues(typeof(FoodType)).Length);
             orderedMeals.Add((FoodType)randomIndex);
-            
-            GameObject icon = Instantiate(iconPrefab, orderIconUI.transform);
+
+            GameObject icon = Instantiate(iconPrefab);
+            icon.transform.SetParent(orderUI.transform, false);
             icon.GetComponent<Image>().sprite = foodReferenceTable.GetSprite((FoodType)randomIndex);
         }
     }
