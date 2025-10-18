@@ -22,5 +22,10 @@ public class WaterBottle : Clickable
     {
         animator.Play(noSprayClip.name);
         Sprayed?.Invoke();
+        StartCoroutine(CustomerHandler.Instance.currentCustomer.Leave());
+        if (CustomerHandler.Instance.currentCustomer != null)
+        {
+            InsanityManager.Instance.ModifyInsanity(5);
+        }
     }
 }

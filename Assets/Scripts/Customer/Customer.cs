@@ -19,7 +19,8 @@ public class Customer : MonoBehaviour
     {
         EASY,
         MEDIUM,
-        HARD
+        HARD,
+        KAREN
     }
 
     public Difficulty currentDifficulty = Difficulty.EASY;
@@ -81,7 +82,7 @@ public class Customer : MonoBehaviour
         yield return new WaitForSeconds(carSource.clip.length);
         StartCoroutine(Order());
     }
-    IEnumerator Order()
+    public IEnumerator Order()
     {
         currentState = CustomerState.ORDERING;
         AudioManager.Instance.PlayAudio("CarIdle", carSource, true, 1, true, 0, true);

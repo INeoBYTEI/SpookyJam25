@@ -24,15 +24,26 @@ public class InsanityManager : MonoBehaviour
     public float insanity = 0;
     [SerializeField] InsanityEvent[] insanityEvents;
     Customer currentCustomer;
+    public static InsanityManager Instance;
 
     [SerializeField] float easyInsanityPerSec = 1;
     [SerializeField] float mediumInsanityPerSec = 2;
     [SerializeField] float hardInsanityPerSec = 3;
+    [SerializeField] float karenInsanityPerSec = 4;
+    public float karenOrderCompleteInsanity = 10;
     [SerializeField] float insanityRecoverPerSec = 1;
 
     void Start()
     {
         CustomerHandler.OnCustomerSpawned += SetCurrentCustomer;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else if (Instance != this)
+        {
+            Destroy(gameObject);
+        }
     }
 
     void SetCurrentCustomer(Customer newCustomer)

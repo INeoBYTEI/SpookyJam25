@@ -1,6 +1,5 @@
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class CounterTop : FoodInteractable
@@ -43,6 +42,12 @@ public class CounterTop : FoodInteractable
             order.RemoveAt(index);
             if (order.Count == 0)
             {
+                if (currentCustomer.currentDifficulty == Customer.Difficulty.KAREN) //Karen custom behavior
+                {
+                    StartCoroutine(currentCustomer.Order());
+                    InsanityManager.Instance.ModifyInsanity(InsanityManager.Instance.karenOrderCompleteInsanity);
+                    return;
+                }
                 CustomerHandler.Instance.customersServed++;
                 currentCustomer.StartCoroutine(currentCustomer.Leave());
                 for (int i = 0; i < IconsHolder.childCount; i++)
