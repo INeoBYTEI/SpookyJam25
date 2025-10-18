@@ -17,7 +17,7 @@ public class FoodStationWorkArea : Clickable
         transform.root.gameObject.SetActive(false);
     }
 
-    public void Activate(FoodType foodType)
+    public virtual void Activate(FoodType foodType)
     {
         this.enabled = true;
         this.foodType = foodType;
