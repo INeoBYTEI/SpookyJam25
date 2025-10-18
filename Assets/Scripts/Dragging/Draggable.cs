@@ -9,7 +9,6 @@ public class Draggable : Clickable
     private void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
-        Debug.Log(rb, rb);
     }
 
     public override void OnClick()
