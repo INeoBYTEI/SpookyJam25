@@ -23,6 +23,7 @@ public class InsanityEvent
 public class InsanityManager : MonoBehaviour
 {
     public float insanity = 0;
+    public float maxInsanity = 100;
     [SerializeField] InsanityEvent[] insanityEvents;
     Customer currentCustomer;
     public static InsanityManager Instance;
@@ -106,19 +107,18 @@ public class InsanityManager : MonoBehaviour
 
     public void ModifyInsanity(float value)
     {
-        float newInsanity = Mathf.Max(0, insanity + value);
+        float newInsanity = Mathf.Clamp(insanity + value, 0, maxInsanity);
         insanity = newInsanity;
         UpdateInsanityOverlay();
     }
 
-    void UpdateInsanityOverlay() //100 is max insanity before you loose, just cant be botherd to make a variable for it
+    void UpdateInsanityOverlay()
     {
-        int frameIndex = Mathf.RoundToInt((insanity / 100f) * (insanityFrames.Length - 1));
+        int frameIndex = Mathf.RoundToInt((insanity / maxInsanity) * (insanityFrames.Length - 1));
         frameIndex = Mathf.Clamp(frameIndex, 0, insanityFrames.Length - 1);
 
-        Debug.Log(frameIndex);
         insanityOverlayImage.sprite = insanityFrames[frameIndex];
-        insanityOverlayImage.color = Color.Lerp(Color.clear, Color.white, insanity / 100f);
+        insanityOverlayImage.color = Color.Lerp(Color.clear, Color.white, insanity / maxInsanity);
     }
 
 
