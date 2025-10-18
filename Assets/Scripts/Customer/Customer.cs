@@ -23,7 +23,7 @@ public class Customer : MonoBehaviour
 
     public Difficulty currentDifficulty = Difficulty.EASY;
     public CustomerState currentState = CustomerState.ARRIVING;
-    
+
     private FoodReferenceTable foodReferenceTable;
     private GameObject iconPrefab;
 
@@ -100,7 +100,7 @@ public class Customer : MonoBehaviour
         // > Play waiting sound
     }
 
-    IEnumerator Leave()
+    public IEnumerator Leave()
     {
         currentState = CustomerState.LEAVING;
         orderUI.SetActive(false);
@@ -110,15 +110,11 @@ public class Customer : MonoBehaviour
         // > Play leaving sound
         yield return new WaitForSeconds(2f);
         infoText.gameObject.SetActive(false);
-        Destroy(gameObject); // Remove customer from scene
-    }
-
-    private void OnDestroy()
-    {
         foreach (Transform child in orderUI.transform)
         {
             Destroy(child.gameObject);
         }
+        Destroy(gameObject); // Remove customer from scene
     }
 
     void Update()
