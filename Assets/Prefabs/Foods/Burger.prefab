@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2892344976013142339, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_Name
-      value: Food
+      value: Burger
       objectReference: {fileID: 0}
     - target: {fileID: 6577827429383983727, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_LocalPosition.x

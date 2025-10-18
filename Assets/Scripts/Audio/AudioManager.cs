@@ -4,31 +4,36 @@ using UnityEngine;
 using System.Collections.Generic;
 using Random = UnityEngine.Random;
 using NUnit.Framework;
+using UnityEditor.EditorTools;
 
 [Serializable]
 public class AudioType
 {
     public string title;
     [SerializeField] AudioClip[] audioClips;
-    [SerializeField] AudioSource source;
+    [SerializeField, Tooltip("Not Required")] AudioSource prePickedSource;
     [SerializeField] float minPitch = 1;
     [SerializeField] float maxPitch = 1;
 
-    public void Play(float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false)
+    public void Play(float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false, AudioSource dynamicSource = null)
     {
-        if(!interrupt && source.isPlaying) { return; }
-        source.clip = audioClips[Random.Range(0, audioClips.Length)];
-        source.volume = volume;
+        AudioSource actualSource;
+        if (dynamicSource) { actualSource = dynamicSource; }
+        else { actualSource = prePickedSource; }
+
+        if (!interrupt && actualSource.isPlaying) { return; }
+        actualSource.clip = audioClips[Random.Range(0, audioClips.Length)];
+        actualSource.volume = volume;
         if (pitchVariance)
         {
-            source.pitch = Random.Range(minPitch, maxPitch);
+            actualSource.pitch = Random.Range(minPitch, maxPitch);
         }
         else
         {
-            source.pitch = 1;
+            actualSource.pitch = 1;
         }
-        source.panStereo = stereoPan;
-        source.Play();
+        actualSource.panStereo = stereoPan;
+        actualSource.Play();
     }
 
     public void SetPitchVariance(float min, float max)
@@ -54,7 +59,7 @@ public class AudioManager : MonoBehaviour
             Instance = this;
             //DontDestroyOnLoad(gameObject);
         }
-        else if(Instance != this)
+        else if (Instance != this)
         {
             Destroy(gameObject);
         }
@@ -65,7 +70,7 @@ public class AudioManager : MonoBehaviour
     /// <summary>
     /// Plays the selected audio from the audioSource, it finds the audio by title. You can modify volume, panning and turn off pitch variance
     /// </summary>
-    public void PlayAudio(string title, float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false)
+    public void PlayAudio(string title, AudioSource source = null, float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false)
     {
         FindAudioType(title).Play(volume, pitchVariance, stereoPan, interrupt);
     }
@@ -90,7 +95,7 @@ public class AudioManager : MonoBehaviour
 
     public void SetAmbiance(AudioClip newClip, float newVolume = 1)
     {
-        if(newClip == null) { return; }
+        if (newClip == null) { return; }
         ambiantSource.clip = newClip;
         ambiantSource.volume = newVolume;
         ambiantSource.loop = true;
