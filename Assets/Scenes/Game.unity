@@ -1681,6 +1681,75 @@ Transform:
   - {fileID: 734151436}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1982700584
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1353756070977860149, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2581921775341226396, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_Layer
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4490536769918054276, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8056514126604640477, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
+    - target: {fileID: 8384612577324959091, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
+      propertyPath: m_Name
+      value: DrinkWorkStation
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 9eb8760ab2ab49146ace2e492be61bc3, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1701,3 +1770,4 @@ SceneRoots:
   - {fileID: 985334720}
   - {fileID: 276379194}
   - {fileID: 790240406}
+  - {fileID: 1982700584}
