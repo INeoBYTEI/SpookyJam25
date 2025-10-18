@@ -71,6 +71,11 @@ public class Clicker : MonoBehaviour
             if (clickedClickables.Contains(clickable)) { clickable.OnReleaseSame(); }
         });
 
+        foreach (Clickable clickable in clickedClickables)
+        {
+            clickable.OnReleaseAny();
+        }
+
         clickedClickables.Clear();
     }
 

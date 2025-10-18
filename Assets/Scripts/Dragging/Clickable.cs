@@ -10,6 +10,8 @@ public class Clickable : MonoBehaviour
 
     public virtual void OnReleaseSame() { }
 
+    public virtual void OnReleaseAny() { }
+
     public virtual void Hover() { }
 
     public virtual void HoverLeave() { }
