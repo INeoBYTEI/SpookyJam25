@@ -44,6 +44,6 @@ public enum FoodType
 {
     Nothing,
     Burger,
-    tentacle,
-    bread
+    Tentacle,
+    Bread
 }

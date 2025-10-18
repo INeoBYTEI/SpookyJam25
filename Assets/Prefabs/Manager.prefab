@@ -48,6 +48,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::InsanityManager
   insanity: 0
   insanityEvents:
+  - title: Lose
+    insanityTriggerValue: 100
+    triggerd:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 7940692744734968602}
+          m_TargetAssemblyTypeName: InsanityManager, Assembly-CSharp
+          m_MethodName: DebugLog
+          m_Mode: 5
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: Damn, thats insane (Lose)
+            m_BoolArgument: 0
+          m_CallState: 2
+    hasTriggerd: 0
   - title: Trauma Trigger
     insanityTriggerValue: 10
     triggerd:
@@ -66,6 +84,11 @@ MonoBehaviour:
             m_BoolArgument: 0
           m_CallState: 2
     hasTriggerd: 0
+  currentCustomer: {fileID: 0}
+  easyInsanityPerSec: 1
+  mediumInsanityPerSec: 2
+  hardInsanityPerSec: 3
+  insanityRecoverPerSec: 1
 --- !u!114 &1809142531617090419
 MonoBehaviour:
   m_ObjectHideFlags: 0
