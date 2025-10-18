@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd715f1b95c2bbd4f92fba2510134d09, type: 3}
   m_Name: Fries
   m_EditorClassIdentifier: Assembly-CSharp::Recipe
-  required: 03000000
+  required: 04000000
   result: 2

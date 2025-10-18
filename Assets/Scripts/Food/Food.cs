@@ -7,13 +7,17 @@ public class Food : Draggable
     public FoodType type;
     [SerializeField] AudioSource audioSource;
 
-    HashSet<FoodInteractable> interactbales = new();
+    HashSet<FoodInteractable> interactables = new();
 
+    private void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<FoodInteractable>(out FoodInteractable combiner))
         {
-            if (!interactbales.Contains(combiner)) { interactbales.Add(combiner); }
+            if (!interactables.Contains(combiner)) { interactables.Add(combiner); }
         }
     }
 
@@ -21,7 +25,7 @@ public class Food : Draggable
     {
         if (collision.gameObject.TryGetComponent<FoodInteractable>(out FoodInteractable combiner))
         {
-            if (interactbales.Contains(combiner)) { interactbales.Remove(combiner); }
+            if (interactables.Contains(combiner)) { interactables.Remove(combiner); }
         }
     }
 
@@ -47,7 +51,7 @@ public class Food : Draggable
     public override void OnRelease()
     {
         base.OnRelease();
-        foreach (FoodInteractable combiner in interactbales)
+        foreach (FoodInteractable combiner in interactables)
         {
             if (combiner == null) { continue; }
             combiner.AddFood(type);
