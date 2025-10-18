@@ -29,12 +29,10 @@ public class InsanityManager : MonoBehaviour
     [SerializeField] float mediumInsanityPerSec = 2;
     [SerializeField] float hardInsanityPerSec = 3;
     [SerializeField] float insanityRecoverPerSec = 1;
-    CustomerHandler customerHandler;
 
     void Start()
     {
-        customerHandler = FindFirstObjectByType<CustomerHandler>();
-        customerHandler.OnCustomerSpawned += SetCurrentCustomer;
+        CustomerHandler.OnCustomerSpawned += SetCurrentCustomer;
     }
 
     void SetCurrentCustomer(Customer newCustomer)
