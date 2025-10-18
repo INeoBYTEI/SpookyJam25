@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 830939740995328723}
   - component: {fileID: 1318615790589176677}
   - component: {fileID: 4441368290143719273}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 11
   m_Sprite: {fileID: -7968644844537424231, guid: f1e5703c2aca4784babab43da4e84779, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -226,7 +226,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 10
   m_Sprite: {fileID: -6457355435871525638, guid: 4e7673ce7e906334ea9abc163a4de41b, type: 3}
   m_Color: {r: 0.6981132, g: 0.53609824, b: 0.53609824, a: 1}
   m_FlipX: 0

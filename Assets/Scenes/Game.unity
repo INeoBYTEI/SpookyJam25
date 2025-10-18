@@ -668,6 +668,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: SprayBottle
       objectReference: {fileID: 0}
+    - target: {fileID: 7969007414403643626, guid: c5478ba966bed9245a9612cda892b302, type: 3}
+      propertyPath: m_Layer
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

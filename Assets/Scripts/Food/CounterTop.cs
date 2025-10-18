@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.U2D;
 using UnityEngine.UI;
 
 public class CounterTop : FoodInteractable
@@ -51,7 +52,8 @@ public class CounterTop : FoodInteractable
             }
             else
             {
-                Instantiate(iconPrefab, IconsHolder).GetComponent<Image>().sprite = FoodReferenceTable.Instance.GetSprite(food);
+                Image image = Instantiate(iconPrefab, IconsHolder).GetComponent<Image>();
+                image.sprite = FoodReferenceTable.Instance.GetSprite(food);
                 return;
             }
         }

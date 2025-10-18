@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3618518414782427600}
   - component: {fileID: 5315640895772523541}
   - component: {fileID: 4380911793518909480}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -104,7 +104,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cdac31f65409b44d9b1370f9a233623, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DragSpawner
-  spawnPrefab: {fileID: 2892344976013142339, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+  foodType: 0
 --- !u!61 &4380911793518909480
 BoxCollider2D:
   m_ObjectHideFlags: 0
