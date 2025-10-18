@@ -78,16 +78,13 @@ public class Customer : MonoBehaviour
         // > Arrival animation or effects
         AudioManager.Instance.PlayAudio("CarArrive", carSource, false, 1, true, 0, true);
         // > Play arrival sound
-        Debug.Log("justplayed audio arrive: " + Time.time);
         yield return new WaitForSeconds(carSource.clip.length);
-        Debug.Log(carSource.clip.length + " | " + Time.time);
         StartCoroutine(Order());
     }
     IEnumerator Order()
     {
         currentState = CustomerState.ORDERING;
         AudioManager.Instance.PlayAudio("CarIdle", carSource, true, 1, true, 0, true);
-        Debug.Log("justplayed audio idle: " + Time.time);
         // Initialize ordering behavior
         infoText.text = "Customer is ordering...";
         // > Display order UI
