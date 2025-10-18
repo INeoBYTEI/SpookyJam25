@@ -1,16 +1,19 @@
 using UnityEngine;
 
-public class FoodStationStart : MonoBehaviour
+public class FoodStationStart : RecipeCheck
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject workAreaPrefab;
+    FoodStationWorkArea workArea;
+
+    private void Awake()
     {
-        
+
+        workArea = Instantiate(workAreaPrefab).GetComponentInChildren<FoodStationWorkArea>();
+        workArea.stationStart = this;
     }
 
-    // Update is called once per frame
-    void Update()
+    public override void RecipeMatched(FoodType foodType)
     {
-        
+        workArea.Activate(foodType);
     }
 }
