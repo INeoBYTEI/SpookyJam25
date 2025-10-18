@@ -5,6 +5,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
 
+[RequireComponent(typeof(AudioSource))]
 public class Customer : MonoBehaviour
 {
     public enum CustomerState
@@ -36,6 +37,7 @@ public class Customer : MonoBehaviour
     private TextMeshProUGUI infoText;
 
     private InputAction spaceBar; //For testing purpose only
+    AudioSource carSource;
 
     private void Start()
     {
@@ -53,6 +55,7 @@ public class Customer : MonoBehaviour
 
         orderUI.SetActive(false);
         infoText.gameObject.SetActive(true);
+        carSource = GetComponent<AudioSource>();
 
         StartCoroutine(Arrive());
     }
@@ -73,22 +76,25 @@ public class Customer : MonoBehaviour
         // Initialize arrival behavior
         infoText.text = "Customer is arriving...";
         // > Arrival animation or effects
-        // animator.Play("Customer_Arrive");
+        AudioManager.Instance.PlayAudio("CarArrive", carSource, false, 1, true, 0, true);
         // > Play arrival sound
-        yield return new WaitForSeconds(2f);
+        Debug.Log("justplayed audio arrive: " + Time.time);
+        yield return new WaitForSeconds(carSource.clip.length);
+        Debug.Log(carSource.clip.length + " | " + Time.time);
         StartCoroutine(Order());
     }
     IEnumerator Order()
     {
         currentState = CustomerState.ORDERING;
+        AudioManager.Instance.PlayAudio("CarIdle", carSource, true, 1, true, 0, true);
+        Debug.Log("justplayed audio idle: " + Time.time);
         // Initialize ordering behavior
         infoText.text = "Customer is ordering...";
         // > Display order UI
         orderUI.SetActive(true);
         // > Set order icon
         GenerateOrder();
-        // > Play ordering sound
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(carSource.clip.length);
         Wait();
     }
 
@@ -107,9 +113,9 @@ public class Customer : MonoBehaviour
         // Initialize leaving behavior
         infoText.text = "Customer is leaving...";
         // > Play leaving animation or effects
-        //AudioManager.Instance.PlayAudio("PickupBag");
+        AudioManager.Instance.PlayAudio("CarLeave", carSource, false, 1, true, 0, true);
         // > Play leaving sound
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(carSource.clip.length);
         infoText.gameObject.SetActive(false);
         foreach (Transform child in orderUI.transform)
         {
@@ -128,11 +134,11 @@ public class Customer : MonoBehaviour
             }
         }
     }
-    
+
     void GenerateOrder()
     {
         orderedMeals.Clear();
-        
+
         for (int i = 0; i < hungerLevel; i++)
         {
             int randomIndex = Random.Range(1, System.Enum.GetValues(typeof(FoodType)).Length);

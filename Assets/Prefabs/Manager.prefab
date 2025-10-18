@@ -148,6 +148,24 @@ MonoBehaviour:
     prePickedSource: {fileID: 0}
     minPitch: 0.9
     maxPitch: 1.1
+  - title: CarArrive
+    audioClips:
+    - {fileID: 8300000, guid: b5f9161a31b7d154b8c4bad4f61266e7, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: CarIdle
+    audioClips:
+    - {fileID: 8300000, guid: 2eb64f4ee61fc474db4bcf2e65784f55, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: CarLeave
+    audioClips:
+    - {fileID: 8300000, guid: 6214d9c572c0b9c45907115f383fd639, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
   startAmbiance: {fileID: 0}
 --- !u!82 &8060464194933188672
 AudioSource:

@@ -15,7 +15,7 @@ public class AudioType
     [SerializeField] float minPitch = 1;
     [SerializeField] float maxPitch = 1;
 
-    public void Play(float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false, AudioSource dynamicSource = null)
+    public void Play(float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false, AudioSource dynamicSource = null, bool loop = false)
     {
         AudioSource actualSource;
         if (dynamicSource)
@@ -39,6 +39,7 @@ public class AudioType
         {
             actualSource.pitch = 1;
         }
+        actualSource.loop = loop;
         actualSource.panStereo = stereoPan;
         actualSource.Play();
     }
@@ -77,9 +78,9 @@ public class AudioManager : MonoBehaviour
     /// <summary>
     /// Plays the selected audio from the audioSource, it finds the audio by title. You can modify volume, panning and turn off pitch variance
     /// </summary>
-    public void PlayAudio(string title, AudioSource source = null, float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false)
+    public void PlayAudio(string title, AudioSource source = null, bool loop = false, float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false)
     {
-        FindAudioType(title).Play(volume, pitchVariance, stereoPan, interrupt, source);
+        FindAudioType(title).Play(volume, pitchVariance, stereoPan, interrupt, source, loop);
     }
 
     public void PlayAudioSimple(string title)
