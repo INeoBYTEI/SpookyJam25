@@ -5,11 +5,12 @@ using TMPro;
 
 public class CustomerHandler : MonoBehaviour
 {
-
+    public static CustomerHandler Instance { get; private set; }
     [SerializeField] private List<Customer> customerVariants = new List<Customer>();
 
     public float spawnInterval = 3f;
     public int customersSpawned = 0;
+    public int customersServed = 0;
 
     private float spawnTimer;
     public Customer currentCustomer;
@@ -20,6 +21,9 @@ public class CustomerHandler : MonoBehaviour
     [SerializeField] private TextMeshProUGUI infoText;
     void Start()
     {
+        if (Instance == null) { Instance = this; }
+        else { Destroy(this); }
+        
         SpawnCustomer(0, 1);
     }
     void SpawnCustomer(int index = -1, int hungerLevel = -1)
