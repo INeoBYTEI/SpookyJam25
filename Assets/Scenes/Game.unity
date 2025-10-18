@@ -1875,6 +1875,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: DrinkWorkStation
       objectReference: {fileID: 0}
+    - target: {fileID: 8149473815843169049, guid: ef46e94d6a82ea341885de297139d348, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9051733020839770263, guid: ef46e94d6a82ea341885de297139d348, type: 3}
       propertyPath: m_IsActive
       value: 0
