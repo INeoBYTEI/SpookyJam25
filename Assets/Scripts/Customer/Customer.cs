@@ -29,13 +29,14 @@ public class Customer : MonoBehaviour
     [SerializeField] private GameObject iconPrefab;
 
     [SerializeField] private Animator animator;
-    
-    [SerializeField] private int hungerLevel = 1;
-    [SerializeField] private List<FoodType> orderedMeals = new List<FoodType>();
+
+    public int hungerLevel = 1;
+    public List<FoodType> orderedMeals = new List<FoodType>();
 
     [SerializeField] private GameObject orderUI;
     [SerializeField] private GameObject orderIconUI;
     [SerializeField] private TextMeshProUGUI infoText;
+
     private InputAction spaceBar; //For testing purpose only
 
     private void Start()
