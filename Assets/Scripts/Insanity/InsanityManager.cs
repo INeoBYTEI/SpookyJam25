@@ -92,6 +92,9 @@ public class InsanityManager : MonoBehaviour
             case Customer.Difficulty.HARD:
                 ModifyInsanity(hardInsanityPerSec * Time.deltaTime);
                 break;
+            case Customer.Difficulty.KAREN:
+                ModifyInsanity(karenInsanityPerSec * Time.deltaTime);
+                break;
         }
     }
 

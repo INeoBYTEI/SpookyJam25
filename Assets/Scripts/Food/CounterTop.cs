@@ -10,7 +10,7 @@ public class CounterTop : FoodInteractable
     [SerializeField] float torqueMultiplier;
     Customer currentCustomer;
 
-    List<FoodType> order = new();
+    List<FoodOrder> order = new();
 
     private void OnEnable()
     {
@@ -29,7 +29,7 @@ public class CounterTop : FoodInteractable
         bool hit = false;
         for (int i = 0; i < order.Count; i++)
         {
-            if (order[i] == food)
+            if (order[i].type == food)
             {
                 hit = true;
                 index = i;
@@ -44,7 +44,7 @@ public class CounterTop : FoodInteractable
             {
                 if (currentCustomer.currentDifficulty == Customer.Difficulty.KAREN) //Karen custom behavior
                 {
-                    StartCoroutine(currentCustomer.Order());
+                    StartCoroutine(currentCustomer.KarenReorder());
                     InsanityManager.Instance.ModifyInsanity(InsanityManager.Instance.karenOrderCompleteInsanity);
                     return;
                 }

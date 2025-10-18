@@ -1,9 +1,11 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
+using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(AudioSource))]
 public class Customer : MonoBehaviour
@@ -32,7 +34,8 @@ public class Customer : MonoBehaviour
     [SerializeField] private Animator animator;
 
     public int hungerLevel = 1;
-    public List<FoodType> orderedMeals = new List<FoodType>();
+    public List<FoodOrder> orderedMeals = new();
+    public List<FoodOrder> orderedMealsBackup = new();
 
     private GameObject orderUI;
     private TextMeshProUGUI infoText;
@@ -122,6 +125,20 @@ public class Customer : MonoBehaviour
         Destroy(gameObject); // Remove customer from scene
     }
 
+    public IEnumerator KarenReorder()
+    {
+        foreach (var order in orderedMealsBackup)
+        {
+            order.icon.transform.GetChild(0).gameObject.SetActive(true);
+        }
+        yield return new WaitForSeconds(3);
+        foreach (var order in orderedMealsBackup)
+        {
+            Destroy(order.icon);
+        }
+        StartCoroutine(Order());
+    }
+
     void Update()
     {
         if (currentState == CustomerState.WAITING)
@@ -136,15 +153,29 @@ public class Customer : MonoBehaviour
     void GenerateOrder()
     {
         orderedMeals.Clear();
+        orderedMealsBackup.Clear();
 
+        int randomIndex = Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
         for (int i = 0; i < hungerLevel; i++)
         {
-            int randomIndex = Random.Range(1, System.Enum.GetValues(typeof(FoodType)).Length);
-            orderedMeals.Add((FoodType)randomIndex);
-
-            GameObject icon = Instantiate(iconPrefab);
-            icon.transform.SetParent(orderUI.transform, false);
-            icon.GetComponent<Image>().sprite = foodReferenceTable.GetSprite((FoodType)randomIndex);
+            orderedMeals.Add(FixFoodOrder((FoodType)randomIndex));
         }
+        orderedMealsBackup = new(orderedMeals);
     }
+
+    FoodOrder FixFoodOrder(FoodType type)
+    {
+        FoodOrder foodOrder = new();
+        foodOrder.type = type;
+        foodOrder.icon = Instantiate(iconPrefab);
+        foodOrder.icon.transform.SetParent(orderUI.transform, false);
+        foodOrder.icon.GetComponent<Image>().sprite = foodReferenceTable.GetSprite(type);
+        return foodOrder;
+    }
+}
+
+public class FoodOrder
+{
+    public FoodType type;
+    public GameObject icon;
 }
