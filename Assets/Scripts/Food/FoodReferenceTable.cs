@@ -16,7 +16,7 @@ public class FoodReferenceTable : MonoBehaviour
 
     public Food SpawnFood(FoodType foodType, Vector3 position)
     {
-        if (foodType == null || foodType == FoodType.Nothing) {  return null; }
+        if (foodType == FoodType.Nothing) {  return null; }
         GameObject gameObject = Instantiate(referenceTable[(int)foodType].prefab, position, Quaternion.identity);
         if ( gameObject.TryGetComponent<Food>(out Food food))
         {

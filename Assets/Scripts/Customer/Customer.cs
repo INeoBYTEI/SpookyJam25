@@ -14,7 +14,6 @@ public class Customer : MonoBehaviour
         WAITING,
         LEAVING
     }
-
     public enum Difficulty
     {
         EASY,
@@ -24,18 +23,17 @@ public class Customer : MonoBehaviour
 
     public Difficulty currentDifficulty = Difficulty.EASY;
     public CustomerState currentState = CustomerState.ARRIVING;
-
-    [SerializeField] private FoodReferenceTable foodReferenceTable;
-    [SerializeField] private GameObject iconPrefab;
+    
+    private FoodReferenceTable foodReferenceTable;
+    private GameObject iconPrefab;
 
     [SerializeField] private Animator animator;
 
     public int hungerLevel = 1;
     public List<FoodType> orderedMeals = new List<FoodType>();
 
-    [SerializeField] private GameObject orderUI;
-    [SerializeField] private GameObject orderIconUI;
-    [SerializeField] private TextMeshProUGUI infoText;
+    private GameObject orderUI;
+    private TextMeshProUGUI infoText;
 
     private InputAction spaceBar; //For testing purpose only
 
@@ -45,10 +43,12 @@ public class Customer : MonoBehaviour
         {
             Debug.LogError("FoodReferenceTable is not assigned in Customer script.");
         }
+
         if (animator == null)
         {
             animator = this.GetComponent<Animator>();
         }
+
         spaceBar = InputSystem.actions.FindAction("Jump");
 
         orderUI.SetActive(false);
@@ -57,6 +57,16 @@ public class Customer : MonoBehaviour
         StartCoroutine(Arrive());
     }
 
+    public void InsertMembers(
+        FoodReferenceTable _foodReferenceTable, GameObject _iconPrefab,
+        GameObject _orderUI, TextMeshProUGUI _infoText
+        )
+    {
+        foodReferenceTable = _foodReferenceTable;
+        iconPrefab = _iconPrefab;
+        orderUI = _orderUI;
+        infoText = _infoText;
+    }
     IEnumerator Arrive()
     {
         currentState = CustomerState.ARRIVING;
@@ -78,8 +88,7 @@ public class Customer : MonoBehaviour
         // > Set order icon
         GenerateOrder();
         // > Play ordering sound
-        yield return new WaitForSeconds(5f);
-        orderUI.SetActive(false);
+        yield return new WaitForSeconds(2f);
         Wait();
     }
 
@@ -94,6 +103,7 @@ public class Customer : MonoBehaviour
     IEnumerator Leave()
     {
         currentState = CustomerState.LEAVING;
+        orderUI.SetActive(false);
         // Initialize leaving behavior
         infoText.text = "Customer is leaving...";
         // > Play leaving animation or effects
@@ -102,6 +112,15 @@ public class Customer : MonoBehaviour
         infoText.gameObject.SetActive(false);
         Destroy(gameObject); // Remove customer from scene
     }
+
+    private void OnDestroy()
+    {
+        foreach (Transform child in orderUI.transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
+
     void Update()
     {
         if (currentState == CustomerState.WAITING)
