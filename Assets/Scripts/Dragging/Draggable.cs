@@ -4,7 +4,7 @@ using UnityEngine;
 public class Draggable : Clickable
 {
     Vector2 offset;
-    Rigidbody2D rb;
+    [HideInInspector] public Rigidbody2D rb;
 
     private void Awake()
     {

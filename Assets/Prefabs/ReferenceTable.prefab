@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 7544715387398644320}
   - component: {fileID: 2677780369171194383}
   m_Layer: 0
-  m_Name: RefranceTable
+  m_Name: ReferenceTable
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -49,11 +49,11 @@ MonoBehaviour:
     sprite: {fileID: 0}
     foodType: 0
   - prefab: {fileID: 4449716898510149748, guid: 44ef87e852a0ce84d9cf7620fc294277, type: 3}
-    sprite: {fileID: 21300000, guid: fd5c01534830bf841871777cfd660e8d, type: 3}
+    sprite: {fileID: 21300000, guid: 93fb92e51ea2f2d4c8b4b07cc828b8f0, type: 3}
     foodType: 1
   - prefab: {fileID: 1298013283525586882, guid: 2b1c393c1e6ab304f86cd94c313bf261, type: 3}
-    sprite: {fileID: 21300000, guid: 3233afe4c448d4eb198cfb1ca54feb3b, type: 3}
+    sprite: {fileID: 21300000, guid: 143296d4399c9e84ca117e58de41a1d0, type: 3}
     foodType: 2
   - prefab: {fileID: 3785420628029519768, guid: b1cc4f6310889124ba33cedbc64a51c0, type: 3}
-    sprite: {fileID: 21300000, guid: 1ee20322f16cdf545b5b1398c9c85856, type: 3}
+    sprite: {fileID: 21300000, guid: 1082a20e5d4797c4b9087bee9b81fced, type: 3}
     foodType: 3
