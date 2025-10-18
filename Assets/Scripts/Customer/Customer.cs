@@ -107,7 +107,7 @@ public class Customer : MonoBehaviour
         // Initialize leaving behavior
         infoText.text = "Customer is leaving...";
         // > Play leaving animation or effects
-        AudioManager.Instance.PlayAudio("PickupBag");
+        //AudioManager.Instance.PlayAudio("PickupBag");
         // > Play leaving sound
         yield return new WaitForSeconds(2f);
         infoText.gameObject.SetActive(false);
