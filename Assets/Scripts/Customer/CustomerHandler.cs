@@ -47,6 +47,19 @@ public class CustomerHandler : MonoBehaviour
 
         spawnTimer = spawnInterval;
     }
+
+    public void HideUI()
+    {
+        orderUI.SetActive(false);
+        infoText.gameObject.SetActive(false);
+    }
+
+    public void ShowUI()
+    {
+        orderUI.SetActive(true);
+        infoText.gameObject.SetActive(true);
+    }
+
     void Update()
     {
         if (currentCustomer == null)

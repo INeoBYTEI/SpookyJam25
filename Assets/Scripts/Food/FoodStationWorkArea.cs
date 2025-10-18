@@ -21,6 +21,8 @@ public class FoodStationWorkArea : Clickable
         this.foodType = foodType;
         transform.root.gameObject.SetActive(true);
         animator.Play(glideIn.name);
+
+        CustomerHandler.Instance.HideUI();
     }
 
     public void Deactivate()
@@ -28,7 +30,12 @@ public class FoodStationWorkArea : Clickable
         animator.Play(glideOut.name);
         this.enabled = false;
         Invoke(nameof(DeactivateSelf), glideOut.length);
+
     }
 
-    private void DeactivateSelf() { transform.root.gameObject.SetActive(false); }
+    private void DeactivateSelf()
+    {
+        CustomerHandler.Instance.ShowUI();
+        transform.root.gameObject.SetActive(false);
+    }
 }
