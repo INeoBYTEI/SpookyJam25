@@ -151,5 +151,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodStationStart
   recipes:
-  - {fileID: 11400000, guid: 70554acb80f17684b992f805f879a0a6, type: 2}
+  - {fileID: 11400000, guid: f428634501bd1b340bfc93a6fc669a34, type: 2}
   workAreaPrefab: {fileID: 8384612577324959091, guid: 77115deacf8618a40953346911b05258, type: 3}

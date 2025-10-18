@@ -7,7 +7,6 @@ public class FoodStationStart : RecipeCheck
 
     private void Awake()
     {
-
         workArea = Instantiate(workAreaPrefab).GetComponentInChildren<FoodStationWorkArea>();
         workArea.stationStart = this;
     }

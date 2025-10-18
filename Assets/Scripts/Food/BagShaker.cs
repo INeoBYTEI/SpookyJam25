@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class BagShaker : FoodStationWorkArea
 {
+    [SerializeField] AnimationCurve curve;
+    [SerializeField] SpriteRenderer[] fries;
     [SerializeField] float dragResistance = 1;
     [SerializeField] float maxLength = 1;
     [SerializeField] float shakeToComplete;
+    [SerializeField] Color FinishedColor;
 
     bool clicked = false;
     float currentShakeAmount;
@@ -47,6 +50,12 @@ public class BagShaker : FoodStationWorkArea
                 FoodReferenceTable.Instance.SpawnFood(foodType, transform.position);
                 currentShakeAmount = 0;
                 Deactivate();
+            }
+
+            float value = curve.Evaluate(currentShakeAmount / Mathf.Pow(shakeToComplete, 2));
+            foreach (SpriteRenderer spriteRenderer in fries)
+            {
+                spriteRenderer.color = Vector4.Lerp(Color.white, FinishedColor, value);
             }
         }
     }

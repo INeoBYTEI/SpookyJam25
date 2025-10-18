@@ -324,9 +324,38 @@ MonoBehaviour:
   glideOut: {fileID: 7400000, guid: c087f5ad8a329eb44bf95600f6a18112, type: 2}
   stationStart: {fileID: 0}
   cover: {fileID: 6692463911406237363}
+  curve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 2
+      outSlope: 2
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  fries:
+  - {fileID: 4222913966565114559}
+  - {fileID: 3598448468113584814}
+  - {fileID: 9177547852011736194}
   dragResistance: 1
   maxLength: 1
   shakeToComplete: 10
+  FinishedColor: {r: 0.84313726, g: 0.62352943, b: 0.35686275, a: 1}
 --- !u!1 &989412867559637092
 GameObject:
   m_ObjectHideFlags: 0
