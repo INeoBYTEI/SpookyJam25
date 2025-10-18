@@ -251,7 +251,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5879908185920406224}
-  - {fileID: 216008777968065722}
   m_Father: {fileID: 7245726694108663913}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -354,7 +353,7 @@ RectTransform:
   - {fileID: 4851037241371937304}
   - {fileID: 1798363680835796570}
   - {fileID: 7821237181173338187}
-  m_Father: {fileID: 9016589146375210848}
+  m_Father: {fileID: 5879908185920406224}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -662,6 +661,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Dispenser
   isDispensing: 1
+  cupFillImage: {fileID: 0}
 --- !u!1 &9079248139270364929
 GameObject:
   m_ObjectHideFlags: 0
@@ -691,7 +691,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 216008777968065722}
   m_Father: {fileID: 9016589146375210848}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
