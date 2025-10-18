@@ -35,10 +35,10 @@ public class Food : Draggable
             case FoodType.Burger:
                 AudioManager.Instance.PlayAudio("GrabBurger", audioSource);
                 break;
-            case FoodType.Tentacle:
+            case FoodType.Fries:
                 AudioManager.Instance.PlayAudio("Crunch", audioSource);
                 break;
-            case FoodType.Bread:
+            case FoodType.Soda:
                 AudioManager.Instance.PlayAudio("GrabBurger", audioSource);
                 break;
         }

@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &6950000892577353420
+--- !u!1001 &4237303149413066356
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -10,23 +10,23 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 319579628733200982, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_Name
-      value: Fries
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024353341698105301, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.09
-      objectReference: {fileID: 0}
-    - target: {fileID: 2024353341698105301, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.95
+      value: Single fry
       objectReference: {fileID: 0}
     - target: {fileID: 5323002298657250372, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_Size.x
-      value: 1.91
+      value: 2.8709323
       objectReference: {fileID: 0}
     - target: {fileID: 5323002298657250372, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_Size.y
-      value: 2.11
+      value: 2.1553276
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323002298657250372, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.18259323
+      objectReference: {fileID: 0}
+    - target: {fileID: 5323002298657250372, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.00000011920929
       objectReference: {fileID: 0}
     - target: {fileID: 7424058556421309424, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_LocalPosition.x
@@ -71,7 +71,7 @@ PrefabInstance:
     - target: {fileID: 9223315878851091080, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 1082a20e5d4797c4b9087bee9b81fced, type: 3}
+      objectReference: {fileID: 7858654666778607677, guid: 66f017afbd4b2db479d716d0e82aa161, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

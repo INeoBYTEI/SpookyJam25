@@ -45,6 +45,7 @@ public class BagShaker : FoodStationWorkArea
             if (currentShakeAmount > Mathf.Pow(shakeToComplete, 2))
             {
                 FoodReferenceTable.Instance.SpawnFood(foodType, transform.position);
+                currentShakeAmount = 0;
                 Deactivate();
             }
         }
