@@ -1,6 +1,6 @@
 using System.Collections;
+using System.Collections.Generic;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
@@ -15,58 +15,78 @@ public class Customer : MonoBehaviour
         LEAVING
     }
 
+    public enum Difficulty
+    {
+        EASY,
+        MEDIUM,
+        HARD
+    }
+
+    public Difficulty currentDifficulty = Difficulty.EASY;
     [SerializeField] private CustomerState currentState = CustomerState.ARRIVING;
+
+    [SerializeField] private FoodReferenceTable foodReferenceTable;
+    [SerializeField] private GameObject iconPrefab;
+
     [SerializeField] private Animator animator;
+    
+    [SerializeField] private int hungerLevel = 1;
+    [SerializeField] private List<FoodType> orderedMeals = new List<FoodType>();
+
     [SerializeField] private GameObject orderUI;
     [SerializeField] private GameObject orderIconUI;
     [SerializeField] private TextMeshProUGUI infoText;
-    [SerializeField] private Sprite orderIcon;
-    private InputAction spaceBar;
+    private InputAction spaceBar; //For testing purpose only
 
     private void Start()
     {
-        animator = this.GetComponent<Animator>();
+        if (foodReferenceTable == null)
+        {
+            Debug.LogError("FoodReferenceTable is not assigned in Customer script.");
+        }
+        if (animator == null)
+        {
+            animator = this.GetComponent<Animator>();
+        }
         spaceBar = InputSystem.actions.FindAction("Jump");
 
         orderUI.SetActive(false);
         infoText.gameObject.SetActive(true);
 
-        currentState = CustomerState.ARRIVING;
         StartCoroutine(Arrive());
     }
 
     IEnumerator Arrive()
     {
+        currentState = CustomerState.ARRIVING;
         // Initialize arrival behavior
         infoText.text = "Customer is arriving...";
         // > Arrival animation or effects
         // animator.Play("Customer_Arrive");
         // > Play arrival sound
         yield return new WaitForSeconds(2f);
-        currentState = CustomerState.ORDERING;
         StartCoroutine(Order());
     }
     IEnumerator Order()
     {
+        currentState = CustomerState.ORDERING;
         // Initialize ordering behavior
         infoText.text = "Customer is ordering...";
         // > Display order UI
         orderUI.SetActive(true);
         // > Set order icon
-        orderIconUI.GetComponent<Image>().sprite = orderIcon;
 
         // > Play ordering sound
         yield return new WaitForSeconds(5f);
         orderUI.SetActive(false);
-        currentState = CustomerState.WAITING;
         Wait();
     }
 
     void Wait()
     {
+        currentState = CustomerState.WAITING;
         // Initialize waiting behavior
         infoText.text = "Customer is waiting for order...";
-        // > Start waiting timer
         // > Play waiting sound
     }
 
@@ -83,12 +103,26 @@ public class Customer : MonoBehaviour
     }
     void Update()
     {
-        if(currentState == CustomerState.WAITING)
+        if (currentState == CustomerState.WAITING)
         {
             if (spaceBar.WasPressedThisFrame())
             {
                 StartCoroutine(Leave());
             }
-        }  
+        }
+    }
+    
+    void GenerateOrder()
+    {
+        orderedMeals.Clear();
+        
+        for (int i = 0; i < hungerLevel; i++)
+        {
+            int randomIndex = Random.Range(0, System.Enum.GetValues(typeof(FoodType)).Length);
+            orderedMeals.Add((FoodType)randomIndex);
+            
+            GameObject icon = Instantiate(iconPrefab, orderIconUI.transform);
+            icon.GetComponent<Image>().sprite = foodReferenceTable.GetSprite((FoodType)randomIndex);
+        }
     }
 }
