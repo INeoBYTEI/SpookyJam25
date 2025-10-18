@@ -90,6 +90,13 @@ MonoBehaviour:
   karenInsanityPerSec: 4
   karenOrderCompleteInsanity: 10
   insanityRecoverPerSec: 1
+  insanityOverlayImage: {fileID: 0}
+  insanityFrames:
+  - {fileID: -7083332522636046654, guid: 9bdbfa58f9ccccc42a9318784e488252, type: 3}
+  - {fileID: -7810682457190940401, guid: 9bdbfa58f9ccccc42a9318784e488252, type: 3}
+  - {fileID: -619499018209364173, guid: 9bdbfa58f9ccccc42a9318784e488252, type: 3}
+  - {fileID: -7926546989789881249, guid: 9bdbfa58f9ccccc42a9318784e488252, type: 3}
+  - {fileID: -8411266670861905799, guid: 9bdbfa58f9ccccc42a9318784e488252, type: 3}
 --- !u!114 &1809142531617090419
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -105,7 +112,7 @@ MonoBehaviour:
   audioTypes:
   - title: McTrauma
     audioClips:
-    - {fileID: 8300000, guid: e7455784d6d2a1e4084c6e8f5ec2e0d9, type: 3}
+    - {fileID: 8300000, guid: b3ed1029cef4b46429905bb04db6e496, type: 3}
     prePickedSource: {fileID: 0}
     minPitch: 1
     maxPitch: 1

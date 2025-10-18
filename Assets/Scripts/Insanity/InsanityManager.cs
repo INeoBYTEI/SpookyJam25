@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.UI;
 
 [Serializable]
 public class InsanityEvent
@@ -33,6 +34,10 @@ public class InsanityManager : MonoBehaviour
     public float karenOrderCompleteInsanity = 10;
     [SerializeField] float insanityRecoverPerSec = 1;
 
+    [Header("insanityView")]
+    [SerializeField] Image insanityOverlayImage;
+    [SerializeField] Sprite[] insanityFrames;
+
     void Start()
     {
         CustomerHandler.OnCustomerSpawned += SetCurrentCustomer;
@@ -44,6 +49,7 @@ public class InsanityManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        UpdateInsanityOverlay();
     }
 
     void SetCurrentCustomer(Customer newCustomer)
@@ -102,7 +108,19 @@ public class InsanityManager : MonoBehaviour
     {
         float newInsanity = Mathf.Max(0, insanity + value);
         insanity = newInsanity;
+        UpdateInsanityOverlay();
     }
+
+    void UpdateInsanityOverlay() //100 is max insanity before you loose, just cant be botherd to make a variable for it
+    {
+        int frameIndex = Mathf.RoundToInt((insanity / 100f) * (insanityFrames.Length - 1));
+        frameIndex = Mathf.Clamp(frameIndex, 0, insanityFrames.Length - 1);
+
+        Debug.Log(frameIndex);
+        insanityOverlayImage.sprite = insanityFrames[frameIndex];
+        insanityOverlayImage.color = Color.Lerp(Color.clear, Color.white, insanity / 100f);
+    }
+
 
     public float GetInsanity()
     {
