@@ -18,8 +18,15 @@ public class AudioType
     public void Play(float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false, AudioSource dynamicSource = null)
     {
         AudioSource actualSource;
-        if (dynamicSource) { actualSource = dynamicSource; }
-        else { actualSource = prePickedSource; }
+        if (dynamicSource)
+        {
+            actualSource = dynamicSource;
+        }
+        else
+        {
+            if (prePickedSource == null) { Debug.LogError("There is no prepicked source!"); }
+            actualSource = prePickedSource;
+        }
 
         if (!interrupt && actualSource.isPlaying) { return; }
         actualSource.clip = audioClips[Random.Range(0, audioClips.Length)];
@@ -72,7 +79,7 @@ public class AudioManager : MonoBehaviour
     /// </summary>
     public void PlayAudio(string title, AudioSource source = null, float volume = 1, bool pitchVariance = true, float stereoPan = 0, bool interrupt = false)
     {
-        FindAudioType(title).Play(volume, pitchVariance, stereoPan, interrupt);
+        FindAudioType(title).Play(volume, pitchVariance, stereoPan, interrupt, source);
     }
 
     public void PlayAudioSimple(string title)

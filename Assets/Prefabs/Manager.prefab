@@ -104,50 +104,50 @@ MonoBehaviour:
   - title: McTrauma
     audioClips:
     - {fileID: 8300000, guid: e7455784d6d2a1e4084c6e8f5ec2e0d9, type: 3}
-    source: {fileID: 0}
+    prePickedSource: {fileID: 0}
     minPitch: 1
     maxPitch: 1
   - title: GrabBurger
     audioClips:
     - {fileID: 8300000, guid: abade56f6ebc76343acaeba14c132d62, type: 3}
-    source: {fileID: 0}
-    minPitch: 1
-    maxPitch: 1
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
   - title: CombineFood
     audioClips:
     - {fileID: 8300000, guid: fdc4293c9c9ebfb4a999061ff119bf9d, type: 3}
-    source: {fileID: 0}
-    minPitch: 1
-    maxPitch: 1
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
   - title: Crunch
     audioClips:
     - {fileID: 8300000, guid: 6542bce54b323c248b8bd5b7210da497, type: 3}
     - {fileID: 8300000, guid: fc9e7a39f28a2864eb3d47cefac61a31, type: 3}
-    source: {fileID: 0}
-    minPitch: 1
-    maxPitch: 1
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
   - title: GrabDrink
     audioClips:
     - {fileID: 8300000, guid: ec2ac0992667688448cc1f2ccd3a1f12, type: 3}
-    source: {fileID: 0}
-    minPitch: 1
-    maxPitch: 1
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
   - title: PickupBag
     audioClips:
     - {fileID: 8300000, guid: 7764d60f6c980eb4c852eb70fa8af7d0, type: 3}
     - {fileID: 8300000, guid: 9231107003f8f9240adee41213e58dcf, type: 3}
     - {fileID: 8300000, guid: b33c87b2c0bd6fc43bb2736173238bd8, type: 3}
     - {fileID: 8300000, guid: a6bc01a54ed41ce4f967d80c4e49b524, type: 3}
-    source: {fileID: 0}
-    minPitch: 1
-    maxPitch: 1
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
   - title: ThrowAway
     audioClips:
     - {fileID: 8300000, guid: 8e820d592d8c29848b7186995857131a, type: 3}
     - {fileID: 8300000, guid: ac0195baac79e0f408a1e95cce5abf0d, type: 3}
-    source: {fileID: 0}
-    minPitch: 1
-    maxPitch: 1
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
   startAmbiance: {fileID: 0}
 --- !u!82 &8060464194933188672
 AudioSource:

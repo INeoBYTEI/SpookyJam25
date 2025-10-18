@@ -1133,7 +1133,7 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 1809142531617090419, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
-      propertyPath: audioTypes.Array.data[0].source
+      propertyPath: audioTypes.Array.data[0].prePickedSource
       value: 
       objectReference: {fileID: 184385404}
     - target: {fileID: 1984474955979036900, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
