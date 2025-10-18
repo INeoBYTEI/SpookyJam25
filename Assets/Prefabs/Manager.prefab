@@ -67,7 +67,7 @@ MonoBehaviour:
           m_CallState: 2
     hasTriggerd: 0
   - title: Trauma Trigger
-    insanityTriggerValue: 10
+    insanityTriggerValue: 75
     triggerd:
       m_PersistentCalls:
         m_Calls:
