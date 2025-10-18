@@ -4,7 +4,7 @@ using System.Collections.Generic;
 public class Combiner : MonoBehaviour
 {
     [SerializeField] List<Recipe> recipes = new List<Recipe>();
-    List<FoodType> stored = new();
+    [SerializeField] List<FoodType> stored = new();
 
 
     public void AddFood(FoodType food)
@@ -26,9 +26,10 @@ public class Combiner : MonoBehaviour
                 if (!stored.Contains(foodType)) { break; }
                 i++;
             }
-            if (i == recipes.Count)
+            if (i == recipe.required.Count)
             {
                 FoodReferenceTable.Instance.Spawn(recipe.result, transform.position);
+                stored.Clear();
                 return;
             }
         }

@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Food : Draggable
 {
-    [HideInInspector] public FoodType Type;
+    public FoodType type;
 
     HashSet<Combiner> combiners = new();
 
@@ -29,7 +29,9 @@ public class Food : Draggable
         foreach (Combiner combiner in combiners)
         {
             if (combiner == null) { continue; }
-
+            combiner.AddFood(type);
+            Destroy(gameObject);
+            return;
         }
     }
 }

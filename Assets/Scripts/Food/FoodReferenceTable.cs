@@ -14,15 +14,16 @@ public class FoodReferenceTable : MonoBehaviour
         else { Destroy(this); }
     }
 
-    public GameObject Spawn(FoodType foodType, Vector3 position)
+    public Food Spawn(FoodType foodType, Vector3 position)
     {
         GameObject gameObject = Instantiate(referenceTable[(int)foodType].prefab, position, Quaternion.identity);
         if ( gameObject.TryGetComponent<Food>(out Food food))
         {
-            food.Type = foodType;
+            food.type = foodType;
+
         }
 
-        return gameObject;
+        return food;
     }
 }
 

@@ -1,23 +1,13 @@
 using UnityEngine;
+using UnityEngine.UIElements;
 
 public class DragSpawner : Clickable
 {
-    [SerializeField] GameObject spawnPrefab;
+    [SerializeField] FoodType foodType;
 
     public override void OnClick()
     {
-        GameObject spawned = Instantiate(spawnPrefab, transform.position, Quaternion.identity);
-        if (spawned != null)
-        {
-            if (spawned.TryGetComponent<Clickable>(out Clickable clickable))
-            {
-                PostSpawn(clickable);
-            }
-        }
-    }
-
-    private void PostSpawn(Clickable clickable)
-    {
-        Clicker.Instance.AddClicked(clickable);
+        Food food = FoodReferenceTable.Instance.Spawn(foodType, transform.position);
+        if (food != null) { Clicker.Instance.AddClicked(food); }
     }
 }
