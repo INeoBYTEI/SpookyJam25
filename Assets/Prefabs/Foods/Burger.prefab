@@ -8,9 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1095862989992957185, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: -1282548317563934418, guid: 93fb92e51ea2f2d4c8b4b07cc828b8f0, type: 3}
     - target: {fileID: 2892344976013142339, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_Name
-      value: Food
+      value: Burger
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847558340201057549, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.x
+      value: 0.71
+      objectReference: {fileID: 0}
+    - target: {fileID: 4847558340201057549, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+      propertyPath: m_SpriteTilingProperty.oldSize.y
+      value: 0.43
       objectReference: {fileID: 0}
     - target: {fileID: 6577827429383983727, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
       propertyPath: m_LocalPosition.x
