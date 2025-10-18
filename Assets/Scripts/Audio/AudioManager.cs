@@ -24,7 +24,7 @@ public class AudioType
         }
         else
         {
-            if (prePickedSource == null) { Debug.LogError("There is no prepicked source!"); }
+            if (prePickedSource == null) { Debug.LogError("There is no prepicked source! title: " + title); }
             actualSource = prePickedSource;
         }
 

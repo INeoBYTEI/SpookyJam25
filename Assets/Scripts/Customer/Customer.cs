@@ -107,6 +107,12 @@ public class Customer : MonoBehaviour
         // > Play waiting sound
     }
 
+    public void ForceLeave()
+    {
+        StopAllCoroutines();
+        StartCoroutine(Leave());
+    }
+
     public IEnumerator Leave()
     {
         currentState = CustomerState.LEAVING;

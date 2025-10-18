@@ -5,7 +5,7 @@ using UnityEngine;
 public class Food : Draggable
 {
     public FoodType type;
-    [SerializeField] AudioSource audioSource;
+    public AudioSource audioSource;
 
     HashSet<FoodInteractable> interactables = new();
 
@@ -32,7 +32,12 @@ public class Food : Draggable
     public override void OnClick()
     {
         base.OnClick();
-        switch (type) //TODO: Play Correct Sounds
+        PlayCorrectFoodSound(type, audioSource);
+    }
+    
+    public static void PlayCorrectFoodSound(FoodType type, AudioSource audioSource)
+    {
+        switch (type)
         {
             case FoodType.Nothing:
                 break;
@@ -42,8 +47,11 @@ public class Food : Draggable
             case FoodType.Fries:
                 AudioManager.Instance.PlayAudio("Crunch", audioSource);
                 break;
+            case FoodType.SingleFry:
+                AudioManager.Instance.PlayAudio("Crunch", audioSource);
+                break;
             case FoodType.Soda:
-                AudioManager.Instance.PlayAudio("GrabBurger", audioSource);
+                AudioManager.Instance.PlayAudio("GrabDrink", audioSource);
                 break;
         }
     }

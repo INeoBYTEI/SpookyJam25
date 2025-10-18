@@ -18,11 +18,12 @@ public class FoodReferenceTable : MonoBehaviour
     {
         if (foodType == FoodType.Nothing) {  return null; }
         GameObject gameObject = Instantiate(referenceTable[(int)foodType].prefab, position, Quaternion.identity);
-        if ( gameObject.TryGetComponent<Food>(out Food food))
+        if (gameObject.TryGetComponent<Food>(out Food food))
         {
             food.type = foodType;
-
         }
+
+        Food.PlayCorrectFoodSound(foodType, food.audioSource);
 
         return food;
     }

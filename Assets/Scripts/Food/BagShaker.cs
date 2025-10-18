@@ -44,7 +44,14 @@ public class BagShaker : FoodStationWorkArea
             offset /= Mathf.Max(magnitude, Mathf.Epsilon);
             transform.localPosition = startPos + (Vector3)(offset * length);
 
-            currentShakeAmount += (lastPos - transform.localPosition).sqrMagnitude;
+            float shakeIntesity = (lastPos - transform.localPosition).sqrMagnitude;
+            currentShakeAmount += shakeIntesity;
+
+            if (shakeIntesity > 0.9f)
+            {
+                AudioManager.Instance.PlayAudio("ShakeBag", default, default, shakeIntesity, default, default, false);
+            }
+            
             if (currentShakeAmount > Mathf.Pow(shakeToComplete, 2))
             {
                 FoodReferenceTable.Instance.SpawnFood(foodType, transform.position);

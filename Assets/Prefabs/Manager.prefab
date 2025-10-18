@@ -87,6 +87,8 @@ MonoBehaviour:
   easyInsanityPerSec: 1
   mediumInsanityPerSec: 2
   hardInsanityPerSec: 3
+  karenInsanityPerSec: 4
+  karenOrderCompleteInsanity: 10
   insanityRecoverPerSec: 1
 --- !u!114 &1809142531617090419
 MonoBehaviour:
@@ -163,6 +165,19 @@ MonoBehaviour:
   - title: CarLeave
     audioClips:
     - {fileID: 8300000, guid: 6214d9c572c0b9c45907115f383fd639, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: ShakeBag
+    audioClips:
+    - {fileID: 8300000, guid: c0c14c1da63002340aeba832debb2e3c, type: 3}
+    - {fileID: 8300000, guid: ffae586503b95a54aa3d50e25f029dc7, type: 3}
+    - {fileID: 8300000, guid: 4d93943d96a48de44bfb0a27f8e4a8d9, type: 3}
+    - {fileID: 8300000, guid: 965575d7bd3883b439e73e5c0ddcd3ef, type: 3}
+    - {fileID: 8300000, guid: 7047ce14a051f2b4095dafceba7e938e, type: 3}
+    - {fileID: 8300000, guid: ac45427e59e72a6429d51e9ca04a41b1, type: 3}
+    - {fileID: 8300000, guid: e83a6ae0b3084664e95a09be78949f2e, type: 3}
+    - {fileID: 8300000, guid: b917061efe0147f49ac4e4e6ec64d497, type: 3}
     prePickedSource: {fileID: 0}
     minPitch: 0.9
     maxPitch: 1.1
