@@ -30,9 +30,9 @@ public class Dispenser : FoodStationWorkArea
             if (cupFillImage.fillAmount >= 1f)
             {
                 ToggleDispenser();
-                FoodReferenceTable.Instance.SpawnFood(foodType, transform.position);
 
                 Deactivate();
+                FoodReferenceTable.Instance.SpawnFood(foodType, default);
                 Invoke(nameof(ResetWorkstation), glideOut.length);
             }
         }

@@ -6,7 +6,7 @@ public class RecipeCheck : FoodInteractable
 {
     [SerializeField] List<Recipe> recipes = new List<Recipe>();
 
-    public override void OnFoodAdded(FoodType food)
+    public override void OnFoodAdded(FoodType food, Vector3 pos)
     {
         CheckRecipes();
     }

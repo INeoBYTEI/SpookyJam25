@@ -62,7 +62,7 @@ public class Food : Draggable
         foreach (FoodInteractable combiner in interactables)
         {
             if (combiner == null) { continue; }
-            combiner.AddFood(type);
+            combiner.AddFood(type, transform.position);
             Destroy(gameObject);
             return;
         }

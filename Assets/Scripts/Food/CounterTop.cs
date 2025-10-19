@@ -17,11 +17,11 @@ public class CounterTop : FoodInteractable
         CustomerHandler.OnCustomerSpawned += SetCustomer;
     }
 
-    public override void OnFoodAdded(FoodType food)
+    public override void OnFoodAdded(FoodType food, Vector3 pos)
     {
         if (currentCustomer == null)
         {
-            ThrowFood(FoodReferenceTable.Instance.SpawnFood(food, transform.position));
+            ThrowFood(FoodReferenceTable.Instance.SpawnFood(food, pos));
             return;
         }
 
@@ -64,7 +64,7 @@ public class CounterTop : FoodInteractable
         }
         else
         {
-            ThrowFood(FoodReferenceTable.Instance.SpawnFood(food, transform.position));
+            ThrowFood(FoodReferenceTable.Instance.SpawnFood(food, pos));
         }
     }
 
