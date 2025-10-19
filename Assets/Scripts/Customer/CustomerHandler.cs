@@ -23,7 +23,7 @@ public class CustomerHandler : MonoBehaviour
     {
         if (Instance == null) { Instance = this; }
         else { Destroy(this); }
-        
+
         SpawnCustomer(0, 1);
     }
     void SpawnCustomer(int index = -1, int hungerLevel = -1)
@@ -67,25 +67,34 @@ public class CustomerHandler : MonoBehaviour
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0f)
             {
-                if (customersSpawned >= 10)
+                if (customersServed < 5)
                 {
-                    SpawnCustomer(2, UnityEngine.Random.Range(2, 4));
+                    SpawnCustomer(0);
                 }
-                else if (customersSpawned >= 7)
+                else if (customersServed < 10)
                 {
-                    SpawnCustomer(2, 1);
+                    int index = UnityEngine.Random.Range(0, 2);
+                    SpawnCustomer(index);
                 }
-                else if (customersSpawned >= 5)
+                else if (customersServed < 15)
                 {
-                    SpawnCustomer(1, UnityEngine.Random.Range(2, 4));
+                    int index = UnityEngine.Random.Range(0, 2);
+                    SpawnCustomer(1);
                 }
-                else if (customersSpawned >= 3)
+                else if (customersServed < 20)
                 {
-                    SpawnCustomer(1, 1);
+                    int index = UnityEngine.Random.Range(1, 3);
+                    SpawnCustomer(index);
+                }
+                else if (customersServed < 25)
+                {
+                    int index = UnityEngine.Random.Range(0, 2);
+                    SpawnCustomer(2);
                 }
                 else
                 {
-                    SpawnCustomer(0);
+                    int index = UnityEngine.Random.Range(2, 4);
+                    SpawnCustomer(index);
                 }
             }
         }  
