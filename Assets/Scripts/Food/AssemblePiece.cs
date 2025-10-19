@@ -1,36 +1,55 @@
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class AssemblePiece : MonoBehaviour
 {
     public int id;
-    public int[] RequiredNeighbors;
-    [HideInInspector] public Dictionary<int, AssemblePiece> touching = new();
 
+    [HideInInspector] public HashSet<AssemblePiece> touching = new();
     [HideInInspector] public BurgerAssembler burgerAssembler;
+
+    TextMeshProUGUI debugText;
+
+    private void Awake()
+    {
+        debugText = GetComponentInChildren<TextMeshProUGUI>();
+    }
+
+    private void OnEnable()
+    {
+        touching.Clear();
+        debugText.text = "0";
+    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<AssemblePiece>(out AssemblePiece piece))
+        AssemblePiece assemblePiece = collision.GetComponentInChildren<AssemblePiece>();
+        if (assemblePiece)
         {
-            if (!touching.ContainsKey(piece.id))
+            if (!touching.Contains(assemblePiece))
             {
-                touching.Add(piece.id, piece);
+                touching.Add(assemblePiece);
                 CheckCompletion();
             }
         }
+
+            debugText.text = touching.Count.ToString();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.TryGetComponent<AssemblePiece>(out AssemblePiece piece))
+        AssemblePiece assemblePiece = collision.GetComponentInChildren<AssemblePiece>();
+        if (assemblePiece)
         {
-            if (touching.ContainsKey(piece.id))
+            if (touching.Contains(assemblePiece))
             {
-                touching.Remove(piece.id);
+                touching.Remove(assemblePiece);
                 CheckCompletion();
             }
         }
+
+        debugText.text = touching.Count.ToString();
     }
 
     private void CheckCompletion()
@@ -42,19 +61,21 @@ public class AssemblePiece : MonoBehaviour
         while (stack.Count > 0)
         {
             AssemblePiece piece = stack.Pop();
-            if (touching.Count != RequiredNeighbors.Length) { return; }
-
-            foreach (int id in piece.RequiredNeighbors)
+            if (piece.id == 1 || piece.id == 3)
             {
-                if (!piece.touching.ContainsKey(id)) { return; }
-                if (!assemblePieces.Contains(piece.touching[id])) 
-                { 
-                    assemblePieces.Add(piece.touching[id]);
-                    stack.Push(piece);
+                if (piece.touching.Count != 1) { return; }
+            }
+            foreach (var kvp in piece.touching)
+            {
+                if (!assemblePieces.Contains(kvp))
+                {
+                    stack.Push(kvp);
+                    assemblePieces.Add(kvp);  
                 }
             }
         }
 
+        if(assemblePieces.Count != 6) {  return; }
         burgerAssembler.Assemble();
     }
 }
