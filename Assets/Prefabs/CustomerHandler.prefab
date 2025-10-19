@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1551238507726789110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8467913772728277929}
+  - component: {fileID: 3596332819717389191}
+  m_Layer: 0
+  m_Name: CustomerHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8467913772728277929
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551238507726789110}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 316.66882, y: 541.83295, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3596332819717389191
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1551238507726789110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8dac7e5b4aa8fe418e230230e14db39, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::CustomerHandler
+  customerVariants:
+  - {fileID: 6149529453199043535, guid: 373a39733f23fd7449a8ba82081a2d1b, type: 3}
+  - {fileID: 6149529453199043535, guid: be171c3024d4d9c4fb7ebe6a7804174e, type: 3}
+  - {fileID: 6149529453199043535, guid: 2d8d04ae014c6a9449aa24973f103e19, type: 3}
+  - {fileID: 6149529453199043535, guid: bd09486938774e34685d1964d24d1d0b, type: 3}
+  spawnInterval: 3
+  customersSpawned: 0
+  customersServed: 0
+  currentCustomer: {fileID: 0}
+  foodReferenceTable: {fileID: 0}
+  iconPrefab: {fileID: 7303926315570008057, guid: 6d1ae3408c194114e9186f1f4e536dc8, type: 3}
+  orderUI: {fileID: 0}
+  infoText: {fileID: 0}
