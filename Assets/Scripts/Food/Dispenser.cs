@@ -1,18 +1,20 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Dispenser : MonoBehaviour
+public class Dispenser : FoodStationWorkArea
 {
-    public bool isDispensing = false;
-    public GameObject dispenserWindow;
-    private FoodType foodType = FoodType.Soda;
-    [SerializeField] private Image cupFillImage;
     private Animator animator;
+    [SerializeField] private Image cupFillImage;
+    //public GameObject dispenserWindow;
+    
+    public bool isDispensing = false;
+    
     void Awake()
     {
         animator = this.GetComponent<Animator>();
         cupFillImage.fillAmount = 0;
     }
+
     public void ToggleDispenser()
     {
         isDispensing = !isDispensing;
@@ -29,17 +31,18 @@ public class Dispenser : MonoBehaviour
             {
                 ToggleDispenser();
                 FoodReferenceTable.Instance.SpawnFood(foodType, transform.position);
-                
-                Invoke("Deactivate", 0.2f);
+
+                Deactivate();
+                Invoke(nameof(ResetWorkstation), glideOut.length);
             }
         }
     }
 
-    void Deactivate()
+    void ResetWorkstation()
     {
         isDispensing = false;
         animator.SetBool("isDispensing", false);
         cupFillImage.fillAmount = 0;
-        dispenserWindow.GetComponent<Animator>().SetTrigger("Fade");
+        //dispenserWindow.GetComponent<Animator>().SetTrigger("Fade");
     }
 }

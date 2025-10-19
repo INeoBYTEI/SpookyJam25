@@ -2,8 +2,8 @@ using UnityEngine;
 
 public class FoodStationWorkArea : Clickable
 {
-    [SerializeField] AnimationClip glideIn;
-    [SerializeField] AnimationClip glideOut;
+    [SerializeField] protected AnimationClip glideIn;
+    [SerializeField] protected AnimationClip glideOut;
 
     Animator animator;
     [HideInInspector] public FoodStationStart stationStart;

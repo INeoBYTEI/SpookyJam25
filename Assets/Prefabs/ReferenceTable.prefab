@@ -48,12 +48,18 @@ MonoBehaviour:
   - prefab: {fileID: 0}
     sprite: {fileID: 0}
     foodType: 0
-  - prefab: {fileID: 4449716898510149748, guid: 44ef87e852a0ce84d9cf7620fc294277, type: 3}
+  - prefab: {fileID: 143634826142474031, guid: 44ef87e852a0ce84d9cf7620fc294277, type: 3}
     sprite: {fileID: 21300000, guid: 93fb92e51ea2f2d4c8b4b07cc828b8f0, type: 3}
     foodType: 1
-  - prefab: {fileID: 1298013283525586882, guid: 2b1c393c1e6ab304f86cd94c313bf261, type: 3}
-    sprite: {fileID: 21300000, guid: 143296d4399c9e84ca117e58de41a1d0, type: 3}
-    foodType: 2
-  - prefab: {fileID: 3785420628029519768, guid: b1cc4f6310889124ba33cedbc64a51c0, type: 3}
+  - prefab: {fileID: 7213644034402645146, guid: b1cc4f6310889124ba33cedbc64a51c0, type: 3}
     sprite: {fileID: 21300000, guid: 1082a20e5d4797c4b9087bee9b81fced, type: 3}
+    foodType: 2
+  - prefab: {fileID: 2734300741512165231, guid: 69c8bbe37ea42e3409cb0ebe9c8cbb34, type: 3}
+    sprite: {fileID: 21300000, guid: f5ffbd08bb5e7f84e817bf46335f9e82, type: 3}
     foodType: 3
+  - prefab: {fileID: 4513366834149268514, guid: c526e286b0c455c4a958cdc2698f278a, type: 3}
+    sprite: {fileID: 7858654666778607677, guid: 66f017afbd4b2db479d716d0e82aa161, type: 3}
+    foodType: 4
+  - prefab: {fileID: 2726298428367740803, guid: 61b6eb08a2c2c05409ea1bf104414bcb, type: 3}
+    sprite: {fileID: 21300000, guid: e49df9f03ee1ddd4ab10eb2fbdeddd31, type: 3}
+    foodType: 5

@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 724796534968706015}
   - component: {fileID: 2724998979930644304}
   - component: {fileID: 690895101727356697}
-  m_Layer: 0
-  m_Name: Burger Assembler
+  m_Layer: 6
+  m_Name: Drink station
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: -3316533999192360394, guid: 8a5557321d16a1d48a318a63442faed2, type: 3}
+  m_Sprite: {fileID: -7700873222662080736, guid: 285933d7494e12744a3fc8f9120d732e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -126,17 +126,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.026939869, y: -0.053879976}
+  m_Offset: {x: -0.026939869, y: 0.0015960932}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 4.6875, y: 1.6875}
+    oldSize: {x: 1.5625, y: 4.3125}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 4.6638536, y: 1.5388026}
+  m_Size: {x: 1.538803, y: 4.2521744}
   m_EdgeRadius: 0
 --- !u!114 &690895101727356697
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc23d0ab6c2ab70489521e0c8ce48350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodStationStart
-  foodType: 1
-  workAreaPrefab: {fileID: 8384612577324959091, guid: 77115deacf8618a40953346911b05258, type: 3}
-  normal: {fileID: -3316533999192360394, guid: 8a5557321d16a1d48a318a63442faed2, type: 3}
-  clicked: {fileID: -4753249315350871332, guid: eeed699c36445df48870fed83eaad85c, type: 3}
+  foodType: 3
+  workAreaPrefab: {fileID: 8149473815843169049, guid: ef46e94d6a82ea341885de297139d348, type: 3}
+  normal: {fileID: -7700873222662080736, guid: 285933d7494e12744a3fc8f9120d732e, type: 3}
+  clicked: {fileID: 1963189799862988052, guid: b4da27f7bf774bb468303f65800d1daa, type: 3}

@@ -82,8 +82,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 311925a002f4447b3a28927169b83ea6, type: 3}
-  m_Color: {r: 0.94716984, g: 0.1483303, b: 0.74860007, a: 1}
+  m_Sprite: {fileID: 7489535956874342842, guid: 07dbc6d0e0dd1004abd7fd46c7bc9f33, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -127,17 +127,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -0.005364895, y: -0.04828316}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 4.6875, y: 1.625}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 4.5514812, y: 1.5901257}
   m_EdgeRadius: 0
 --- !u!114 &690895101727356697
 MonoBehaviour:
@@ -151,9 +151,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc23d0ab6c2ab70489521e0c8ce48350, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::FoodStationStart
-  recipes:
-  - {fileID: 11400000, guid: 70554acb80f17684b992f805f879a0a6, type: 2}
+  foodType: 2
   workAreaPrefab: {fileID: 8384612577324959091, guid: 5e10f28f7e4f4a043831e9aefd6886c8, type: 3}
+  normal: {fileID: 7489535956874342842, guid: 07dbc6d0e0dd1004abd7fd46c7bc9f33, type: 3}
+  clicked: {fileID: -4673068264767677028, guid: b77833853e5fc504cb1c9594eb95b523, type: 3}
 --- !u!82 &165472056017856175
 AudioSource:
   m_ObjectHideFlags: 0
