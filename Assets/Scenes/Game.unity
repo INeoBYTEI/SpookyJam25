@@ -1708,6 +1708,10 @@ PrefabInstance:
       value: Manager
       objectReference: {fileID: 0}
     - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: maxInsanity
+      value: 200
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
       propertyPath: insanityOverlayImage
       value: 
       objectReference: {fileID: 805793262}
@@ -1755,6 +1759,10 @@ PrefabInstance:
       propertyPath: 'insanityFrames.Array.data[9]'
       value: 
       objectReference: {fileID: -2009080890, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: insanityEvents.Array.data[0].insanityTriggerValue
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
