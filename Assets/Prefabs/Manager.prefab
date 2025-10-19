@@ -47,6 +47,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::InsanityManager
   insanity: 0
+  maxInsanity: 100
   insanityEvents:
   - title: Lose
     insanityTriggerValue: 100
@@ -185,6 +186,19 @@ MonoBehaviour:
     - {fileID: 8300000, guid: ac45427e59e72a6429d51e9ca04a41b1, type: 3}
     - {fileID: 8300000, guid: e83a6ae0b3084664e95a09be78949f2e, type: 3}
     - {fileID: 8300000, guid: b917061efe0147f49ac4e4e6ec64d497, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: Spray
+    audioClips:
+    - {fileID: 8300000, guid: b8d6c98773f1c4749af304474c939583, type: 3}
+    - {fileID: 8300000, guid: fad8beb51b14a564780d1cf4652945d2, type: 3}
+    - {fileID: 8300000, guid: 30de3373f1b5253498790d1f06506714, type: 3}
+    - {fileID: 8300000, guid: 693f2255c47fd00499c5539eb92f9a5b, type: 3}
+    - {fileID: 8300000, guid: 3634cd4f3f9811a43a7443c4cc745f29, type: 3}
+    - {fileID: 8300000, guid: cd98cdc2d864bb34b944921e0cb079aa, type: 3}
+    - {fileID: 8300000, guid: 58a14ba03d42e724dac3fa5641436033, type: 3}
+    - {fileID: 8300000, guid: 6d95d7e18e265bf45ae552e2b3194770, type: 3}
     prePickedSource: {fileID: 0}
     minPitch: 0.9
     maxPitch: 1.1

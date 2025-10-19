@@ -15,6 +15,7 @@ public class WaterBottle : Clickable
     public override void OnClick()
     {
         animator.Play(sprayClip.name);
+        AudioManager.Instance.PlayAudio("Spray", null, false, 1, true, 0, true);
         if (CustomerHandler.Instance.currentCustomer.currentState == Customer.CustomerState.LEAVING ||
         CustomerHandler.Instance.currentCustomer.currentState == Customer.CustomerState.ARRIVING)
         {

@@ -723,15 +723,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: SprayBottle
       objectReference: {fileID: 0}
-    - target: {fileID: 7969007414403643626, guid: c5478ba966bed9245a9612cda892b302, type: 3}
-      propertyPath: m_Layer
-      value: 6
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c5478ba966bed9245a9612cda892b302, type: 3}
+--- !u!82 &267540867 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 8802767422309261099, guid: c5478ba966bed9245a9612cda892b302, type: 3}
+  m_PrefabInstance: {fileID: 267540865}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &276379194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1532,6 +1533,10 @@ PrefabInstance:
       propertyPath: audioTypes.Array.data[10].prePickedSource
       value: 
       objectReference: {fileID: 1847504823}
+    - target: {fileID: 1809142531617090419, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: audioTypes.Array.data[11].prePickedSource
+      value: 
+      objectReference: {fileID: 267540867}
     - target: {fileID: 1984474955979036900, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
