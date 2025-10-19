@@ -39,8 +39,6 @@ public class Customer : MonoBehaviour
 
     private GameObject orderUI;
     private TextMeshProUGUI infoText;
-
-    private InputAction spaceBar; //For testing purpose only
     AudioSource carSource;
 
     private void Start()
@@ -54,8 +52,6 @@ public class Customer : MonoBehaviour
         {
             animatorHandler = this.GetComponentInChildren<CustomerAnimationHandler>();
         }
-
-        spaceBar = InputSystem.actions.FindAction("Jump");
 
         orderUI.SetActive(false);
         infoText.gameObject.SetActive(true);
@@ -145,17 +141,6 @@ public class Customer : MonoBehaviour
             Destroy(order.icon);
         }
         StartCoroutine(Order());
-    }
-
-    void Update()
-    {
-        if (currentState == CustomerState.WAITING)
-        {
-            if (spaceBar.WasPressedThisFrame())
-            {
-                StartCoroutine(Leave());
-            }
-        }
     }
 
     void GenerateOrder()
