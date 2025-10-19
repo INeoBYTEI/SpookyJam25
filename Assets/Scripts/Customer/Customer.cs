@@ -31,7 +31,7 @@ public class Customer : MonoBehaviour
     private FoodReferenceTable foodReferenceTable;
     private GameObject iconPrefab;
 
-    [SerializeField] private Animator animator;
+    [SerializeField] private CustomerAnimationHandler animatorHandler;
 
     public int hungerLevel = 1;
     public List<FoodOrder> orderedMeals = new();
@@ -50,9 +50,9 @@ public class Customer : MonoBehaviour
             Debug.LogError("FoodReferenceTable is not assigned in Customer script.");
         }
 
-        if (animator == null)
+        if (animatorHandler == null)
         {
-            animator = this.GetComponent<Animator>();
+            animatorHandler = this.GetComponentInChildren<CustomerAnimationHandler>();
         }
 
         spaceBar = InputSystem.actions.FindAction("Jump");
@@ -80,6 +80,7 @@ public class Customer : MonoBehaviour
         // Initialize arrival behavior
         infoText.text = "Customer is arriving...";
         // > Arrival animation or effects
+        // Animation plays in CustomerAnimationHandler.cs
         AudioManager.Instance.PlayAudio("CarArrive", carSource, false, 1, true, 0, true);
         // > Play arrival sound
         yield return new WaitForSeconds(carSource.clip.length);
@@ -120,6 +121,7 @@ public class Customer : MonoBehaviour
         // Initialize leaving behavior
         infoText.text = "Customer is leaving...";
         // > Play leaving animation or effects
+        StartCoroutine(animatorHandler.PlayLeaveAnimation());
         AudioManager.Instance.PlayAudio("CarLeave", carSource, false, 1, true, 0, true);
         // > Play leaving sound
         yield return new WaitForSeconds(carSource.clip.length);
