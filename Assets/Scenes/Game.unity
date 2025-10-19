@@ -1756,6 +1756,50 @@ PrefabInstance:
       propertyPath: insanityOverlayImage
       value: 
       objectReference: {fileID: 805793262}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: insanityFrames.Array.size
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[0]'
+      value: 
+      objectReference: {fileID: -1733532671, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[1]'
+      value: 
+      objectReference: {fileID: -672175634, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[2]'
+      value: 
+      objectReference: {fileID: 357975467, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[3]'
+      value: 
+      objectReference: {fileID: -1522173578, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[4]'
+      value: 
+      objectReference: {fileID: -1438769459, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[5]'
+      value: 
+      objectReference: {fileID: -1423390334, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[6]'
+      value: 
+      objectReference: {fileID: 1499219059, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[7]'
+      value: 
+      objectReference: {fileID: -1944839730, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[8]'
+      value: 
+      objectReference: {fileID: 2016293693, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
+    - target: {fileID: 7940692744734968602, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: 'insanityFrames.Array.data[9]'
+      value: 
+      objectReference: {fileID: -2009080890, guid: c5beac83974c0d44d84107d9806069ef, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
