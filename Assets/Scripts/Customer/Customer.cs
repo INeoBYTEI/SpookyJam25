@@ -171,7 +171,7 @@ public class Customer : MonoBehaviour
 
         for (int i = 0; i < hungerLevel; i++)
         {
-            int randomIndex = Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
+            int randomIndex = Random.Range(1, Enum.GetValues(typeof(FoodType)).Length-1);
             orderedMeals.Add(FixFoodOrder((FoodType)randomIndex));
         }
         orderedMealsBackup = new(orderedMeals);
