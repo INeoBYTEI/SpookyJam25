@@ -876,19 +876,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7418899697544429279, guid: 99ba23eebcda21b4b9b0684585efa6ad, type: 3}
       propertyPath: m_Size.x
-      value: 11.830322
+      value: 11.497766
       objectReference: {fileID: 0}
     - target: {fileID: 7418899697544429279, guid: 99ba23eebcda21b4b9b0684585efa6ad, type: 3}
       propertyPath: m_Size.y
-      value: 1.4475346
+      value: 8.394251
       objectReference: {fileID: 0}
     - target: {fileID: 7418899697544429279, guid: 99ba23eebcda21b4b9b0684585efa6ad, type: 3}
       propertyPath: m_Offset.x
-      value: -0.0895071
+      value: 0.07677126
       objectReference: {fileID: 0}
     - target: {fileID: 7418899697544429279, guid: 99ba23eebcda21b4b9b0684585efa6ad, type: 3}
       propertyPath: m_Offset.y
-      value: -0.22376728
+      value: 4.653714
       objectReference: {fileID: 0}
     - target: {fileID: 7439360184383567784, guid: 99ba23eebcda21b4b9b0684585efa6ad, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -1796,8 +1796,8 @@ Camera:
   m_GameObject: {fileID: 1689436642}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_ClearFlags: 2
+  m_BackGroundColor: {r: 0.056041334, g: 0.05919509, b: 0.06415099, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0
