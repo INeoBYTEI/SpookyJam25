@@ -1,10 +1,6 @@
 using System;
-using System.Collections;
 using UnityEngine;
-using System.Collections.Generic;
 using Random = UnityEngine.Random;
-using NUnit.Framework;
-using UnityEditor.EditorTools;
 
 [Serializable]
 public class AudioType
