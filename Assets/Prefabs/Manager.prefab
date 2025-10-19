@@ -202,6 +202,86 @@ MonoBehaviour:
     prePickedSource: {fileID: 0}
     minPitch: 0.9
     maxPitch: 1.1
+  - title: Gubb
+    audioClips:
+    - {fileID: 8300000, guid: 770dc2c1861b54942bfaca3f4395f957, type: 3}
+    - {fileID: 8300000, guid: d2211ecbfb4d4e442bd927907c0a748d, type: 3}
+    - {fileID: 8300000, guid: b5eadc92c60c622428676ae3982f4ed5, type: 3}
+    - {fileID: 8300000, guid: 4f776af0399e1cb41a7d851c219b9c47, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: GubbThanks
+    audioClips:
+    - {fileID: 8300000, guid: 2cba1aa106760404a8e9186db08a4024, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: GubbAngry
+    audioClips:
+    - {fileID: 8300000, guid: 1d4f37639f9b9d64cb2f9f700bb76707, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: Dark
+    audioClips:
+    - {fileID: 8300000, guid: f9a1d3687ce51604d93e02d5be1f01cc, type: 3}
+    - {fileID: 8300000, guid: b3425187b21196e4cad052537cb07377, type: 3}
+    - {fileID: 8300000, guid: 50f66e0e5becf8640bae21301610b909, type: 3}
+    - {fileID: 8300000, guid: 13f9f6a7a5cbe51448257f61373b4d60, type: 3}
+    - {fileID: 8300000, guid: 1652ec818c127614588bfcfb0bc41180, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: DarkThanks
+    audioClips:
+    - {fileID: 8300000, guid: 56f145c740621d347ac0dff1c4fff5d8, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: DarkAngry
+    audioClips:
+    - {fileID: 8300000, guid: 8418fc8ff614e2f4b9e6fedaeeed6aca, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: Squid
+    audioClips:
+    - {fileID: 8300000, guid: d9a22c6906351f24dadc2874b837b141, type: 3}
+    - {fileID: 8300000, guid: 9de8b7ea9b43d2748a5e193c5792f9f1, type: 3}
+    - {fileID: 8300000, guid: 40039327cd46c674aa65331873331492, type: 3}
+    - {fileID: 8300000, guid: 9c0a8dbc4b91a404f91eb17928cfafc5, type: 3}
+    - {fileID: 8300000, guid: 6e85d22557b00b74f83cf897e762a023, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: SquidAngry
+    audioClips:
+    - {fileID: 8300000, guid: 204e73d63d4fb714da4cb0c23bb04ce5, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: SquidThanks
+    audioClips:
+    - {fileID: 8300000, guid: 1ddf0f94c81b60b4ea25bab655bd178d, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: Karen
+    audioClips:
+    - {fileID: 8300000, guid: c1c839bd1178d2246acbc3c3995ec865, type: 3}
+    - {fileID: 8300000, guid: 3036c16a20a41134e911e26eb7997444, type: 3}
+    - {fileID: 8300000, guid: 95145680ffb00cc4a9026d4b4f32fc70, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
+  - title: KarenAngry
+    audioClips:
+    - {fileID: 8300000, guid: 803d18475eb663943bdb69241bf19359, type: 3}
+    - {fileID: 8300000, guid: ddf7b53b0f9700c41a10e5e052560172, type: 3}
+    prePickedSource: {fileID: 0}
+    minPitch: 0.9
+    maxPitch: 1.1
   startAmbiance: {fileID: 0}
 --- !u!82 &8060464194933188672
 AudioSource:
