@@ -72,8 +72,83 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 1082a20e5d4797c4b9087bee9b81fced, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 5323002298657250372, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 319579628733200982, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4616315943616796528}
   m_SourcePrefab: {fileID: 100100000, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+--- !u!1 &7213644034402645146 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 319579628733200982, guid: 3b295916ff21e274ebeedde9f7d48713, type: 3}
+  m_PrefabInstance: {fileID: 6950000892577353420}
+  m_PrefabAsset: {fileID: 0}
+--- !u!60 &4616315943616796528
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213644034402645146}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.97986805, y: 1.2560421}
+      - {x: 1.0424545, y: 1.2651782}
+      - {x: 1.0268917, y: 1.4513216}
+      - {x: 0.6043856, y: 1.4442949}
+      - {x: 0.60132295, y: 1.6353346}
+      - {x: 0.1597311, y: 1.628954}
+      - {x: 0.15486072, y: 1.8913182}
+      - {x: -0.08631385, y: 1.9001253}
+      - {x: -0.087154284, y: 1.7665035}
+      - {x: -0.40472093, y: 1.7695693}
+      - {x: -0.670574, y: 1.5947725}
+      - {x: -0.6674386, y: 1.3958083}
+      - {x: -1.276067, y: 1.3935083}
+      - {x: -1.2803199, y: 1.1930902}
+      - {x: -0.97127527, y: 1.0178877}
+      - {x: -0.969731, y: 0.077919334}
+      - {x: -0.7698621, y: -0.9934283}
+      - {x: 0.76986223, y: -0.9957624}
+      - {x: 0.9775083, y: 0.13630292}
+  m_UseDelaunayMesh: 0

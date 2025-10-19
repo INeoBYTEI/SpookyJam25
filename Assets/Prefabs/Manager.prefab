@@ -282,7 +282,7 @@ MonoBehaviour:
     prePickedSource: {fileID: 0}
     minPitch: 0.9
     maxPitch: 1.1
-  startAmbiance: {fileID: 0}
+  startAmbiance: {fileID: 8300000, guid: f1cce7f352b8db24580198ff42865113, type: 3}
 --- !u!82 &8060464194933188672
 AudioSource:
   m_ObjectHideFlags: 0
