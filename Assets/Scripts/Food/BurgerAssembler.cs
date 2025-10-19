@@ -10,11 +10,12 @@ public class BurgerAssembler : FoodStationWorkArea
     AssemblePiece[] assemblePieces;
 
     float timeStartedAssemble;
+    bool done = false;
 
     public override void Activate(FoodType foodType)
     {
         base.Activate(foodType);
-
+        done = false;
         GameObject burgerPieces = Instantiate(burgerPiecesPrefab, transform);
         assemblePieces = burgerPieces.GetComponentsInChildren<AssemblePiece>();
 
@@ -42,8 +43,15 @@ public class BurgerAssembler : FoodStationWorkArea
 
     private void Finished()
     {
+        if (done) { return; }
+        done = true;
         FoodReferenceTable.Instance.SpawnFood(foodType, transform.position);
         Deactivate();
+    }
+
+    protected override void DeactivateSelf()
+    {
+        base.DeactivateSelf();
 
         foreach (AssemblePiece assemblePiece in assemblePieces)
         {
@@ -51,6 +59,7 @@ public class BurgerAssembler : FoodStationWorkArea
             Destroy(assemblePiece.transform.parent.gameObject);
         }
     }
+
 
     IEnumerator LerpToSpot(Transform mover, Transform target, Vector3 startPos, Quaternion startRotation)
     {

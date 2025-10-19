@@ -37,7 +37,7 @@ public class FoodStationWorkArea : Clickable
         Invoke(nameof(DeactivateSelf), glideOut.length);
     }
 
-    private void DeactivateSelf()
+    protected virtual void DeactivateSelf()
     {
         CustomerHandler.Instance.ShowUI();
         stationStart.FullyDethatched();
