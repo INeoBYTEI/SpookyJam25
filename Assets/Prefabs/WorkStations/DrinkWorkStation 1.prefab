@@ -644,7 +644,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1798363680835796570
 RectTransform:
   m_ObjectHideFlags: 0
@@ -741,7 +741,6 @@ MonoBehaviour:
   stationStart: {fileID: 0}
   cover: {fileID: 986296374518404856}
   cupFillImage: {fileID: 2610430842305964304}
-  dispenserWindow: {fileID: 0}
   isDispensing: 1
 --- !u!1 &9079248139270364929
 GameObject:
