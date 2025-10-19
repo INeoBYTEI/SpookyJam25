@@ -40,7 +40,7 @@ public class CustomerHandler : MonoBehaviour
             hungerLevel = UnityEngine.Random.Range(1, 4);
         }
 
-        currentCustomer = Instantiate(customerVariants[index]);
+        currentCustomer = Instantiate(customerVariants[index], Vector3.zero, Quaternion.identity);
         currentCustomer.InsertMembers(foodReferenceTable, iconPrefab, orderUI, infoText);
         currentCustomer.hungerLevel = hungerLevel;
         OnCustomerSpawned?.Invoke(currentCustomer);
