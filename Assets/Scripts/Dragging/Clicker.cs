@@ -56,11 +56,17 @@ public class Clicker : MonoBehaviour
 
     private void Click(InputAction.CallbackContext context)
     {
-        GetClickables((clickable) =>
+        MousePos = Camera.main.ScreenToWorldPoint(Mouse.current.position.ReadValue());
+        Collider2D[] hits = Physics2D.OverlapPointAll(MousePos);
+        foreach (Collider2D hit in hits)
         {
-            clickable.OnClick();
-            if (!clickedClickables.Contains(clickable)) clickedClickables.Add(clickable);
-        });
+            if (hit.gameObject.TryGetComponent<Clickable>(out Clickable clickable))
+            {
+                if (!clickedClickables.Contains(clickable)) clickedClickables.Add(clickable);
+                clickable.OnClick();
+                return;
+            }
+        }
     }
 
     private void ReleaseClick(InputAction.CallbackContext context)
