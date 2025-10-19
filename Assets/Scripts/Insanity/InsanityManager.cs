@@ -41,6 +41,7 @@ public class InsanityManager : MonoBehaviour
 
     void Start()
     {
+        Application.targetFrameRate = 60;
         CustomerHandler.OnCustomerSpawned += SetCurrentCustomer;
         if (Instance == null)
         {

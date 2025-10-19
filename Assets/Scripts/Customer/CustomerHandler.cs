@@ -72,7 +72,6 @@ public class CustomerHandler : MonoBehaviour
             if (spawnTimer <= 0f)
             {
                 int index = UnityEngine.Random.Range(0, 100);
-                Debug.Log(index);
                 if(index < karenSpawnChance)
                 {
                     SpawnCustomer(3);
