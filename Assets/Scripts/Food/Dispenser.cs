@@ -21,6 +21,12 @@ public class Dispenser : FoodStationWorkArea
         animator.SetBool("isDispensing", isDispensing);
     }
 
+    private void OnEnable()
+    {
+        isDispensing = false;
+        animator.SetBool("isDispensing", isDispensing);
+    }
+
     void Update()
     {
         if (isDispensing)
@@ -33,16 +39,15 @@ public class Dispenser : FoodStationWorkArea
 
                 Deactivate();
                 FoodReferenceTable.Instance.SpawnFood(foodType, default);
-                Invoke(nameof(ResetWorkstation), glideOut.length);
             }
         }
     }
 
-    void ResetWorkstation()
+    protected override void DeactivateSelf()
     {
+        base.DeactivateSelf();
         isDispensing = false;
         animator.SetBool("isDispensing", false);
         cupFillImage.fillAmount = 0;
-        //dispenserWindow.GetComponent<Animator>().SetTrigger("Fade");
     }
 }
