@@ -148,9 +148,9 @@ public class Customer : MonoBehaviour
         orderedMeals.Clear();
         orderedMealsBackup.Clear();
 
-        int randomIndex = Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
         for (int i = 0; i < hungerLevel; i++)
         {
+            int randomIndex = Random.Range(1, Enum.GetValues(typeof(FoodType)).Length);
             orderedMeals.Add(FixFoodOrder((FoodType)randomIndex));
         }
         orderedMealsBackup = new(orderedMeals);
