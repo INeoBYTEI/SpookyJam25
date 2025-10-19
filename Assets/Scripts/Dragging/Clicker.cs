@@ -40,7 +40,7 @@ public class Clicker : MonoBehaviour
 
         foreach (Clickable clickedClickable in clickedClickables)
         {
-            clickedClickable.OnDrag();
+            if (clickedClickable) { clickedClickable.OnDrag(); }
         }
 
         foreach (Clickable clickable in hoverClickables)
@@ -79,7 +79,7 @@ public class Clicker : MonoBehaviour
 
         foreach (Clickable clickable in clickedClickables)
         {
-            clickable.OnReleaseAny();
+            if (clickable) { clickable.OnReleaseAny(); }
         }
 
         clickedClickables.Clear();
