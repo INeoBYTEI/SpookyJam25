@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5315640895772523541, guid: f93d7c81c23111c429219701e8a1be82, type: 3}
       propertyPath: foodType
-      value: 1
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6561898015093765664, guid: f93d7c81c23111c429219701e8a1be82, type: 3}
       propertyPath: m_LocalPosition.x

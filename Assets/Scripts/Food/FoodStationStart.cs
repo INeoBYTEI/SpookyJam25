@@ -19,7 +19,8 @@ public class FoodStationStart : Clickable
     }
 
     public override void OnClick()
-    {
+    {   
+        if (workArea.transform.root.gameObject.activeSelf) { return; }
         workArea.Activate(foodType);
         spriteRenderer.sprite = clicked;
     }
