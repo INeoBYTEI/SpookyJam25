@@ -45,8 +45,8 @@ public class Customer : MonoBehaviour
 
     private GameObject orderUI;
     private TextMeshProUGUI infoText;
-    AudioSource carSource;
-    AudioSource customerSource;
+    [SerializeField] AudioSource carSource;
+    [SerializeField] AudioSource customerSource;
 
     private void Start()
     {
@@ -62,8 +62,6 @@ public class Customer : MonoBehaviour
 
         orderUI.SetActive(false);
         infoText.gameObject.SetActive(true);
-        carSource = GetComponent<AudioSource>();
-        customerSource = gameObject.AddComponent<AudioSource>();
 
         StartCoroutine(Arrive());
     }
