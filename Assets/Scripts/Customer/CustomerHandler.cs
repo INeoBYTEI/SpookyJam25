@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
+using System.Linq.Expressions;
 
 public class CustomerHandler : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class CustomerHandler : MonoBehaviour
     public float spawnInterval = 3f;
     public int customersSpawned = 0;
     public int customersServed = 0;
+    public int karenSpawnChance = 0;
 
     private float spawnTimer;
     public Customer currentCustomer;
@@ -46,6 +48,7 @@ public class CustomerHandler : MonoBehaviour
         OnCustomerSpawned?.Invoke(currentCustomer);
 
         spawnTimer = spawnInterval;
+        karenSpawnChance += 2;
     }
 
     public void HideUI()
@@ -64,36 +67,34 @@ public class CustomerHandler : MonoBehaviour
     {
         if (currentCustomer == null)
         {
+            int index = UnityEngine.Random.Range(0, 100);
+
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0f)
             {
-                if (customersServed < 5)
+                if(karenSpawnChance < index)
+                {
+                    SpawnCustomer(3);
+                    karenSpawnChance = 0;
+                }
+                else if (customersServed < 2)
                 {
                     SpawnCustomer(0);
                 }
-                else if (customersServed < 10)
+                else if (customersServed < 7)
                 {
-                    int index = UnityEngine.Random.Range(0, 2);
+                    index %= 2; 
                     SpawnCustomer(index);
                 }
                 else if (customersServed < 15)
                 {
-                    int index = UnityEngine.Random.Range(0, 2);
-                    SpawnCustomer(1);
-                }
-                else if (customersServed < 20)
-                {
-                    int index = UnityEngine.Random.Range(1, 3);
+                    index %= 2;
+                    index += 1;
                     SpawnCustomer(index);
-                }
-                else if (customersServed < 25)
-                {
-                    int index = UnityEngine.Random.Range(0, 2);
-                    SpawnCustomer(2);
                 }
                 else
                 {
-                    int index = UnityEngine.Random.Range(2, 4);
+                    index %= 3;
                     SpawnCustomer(index);
                 }
             }

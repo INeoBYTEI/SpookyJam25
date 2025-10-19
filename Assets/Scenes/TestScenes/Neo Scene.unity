@@ -171,6 +171,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 3792396831400395231, guid: bae853133db2ec945ba42f2337cc9947, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -564,6 +568,10 @@ PrefabInstance:
     - target: {fileID: 1551238507726789110, guid: e98796985cf00a847bdb440b2a50b0df, type: 3}
       propertyPath: m_Name
       value: CustomerHandler
+      objectReference: {fileID: 0}
+    - target: {fileID: 1551238507726789110, guid: e98796985cf00a847bdb440b2a50b0df, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3596332819717389191, guid: e98796985cf00a847bdb440b2a50b0df, type: 3}
       propertyPath: orderUI
