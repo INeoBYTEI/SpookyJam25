@@ -48,7 +48,7 @@ public class CustomerHandler : MonoBehaviour
         OnCustomerSpawned?.Invoke(currentCustomer);
 
         spawnTimer = spawnInterval;
-        karenSpawnChance += 2;
+        karenSpawnChance += 5;
     }
 
     public void HideUI()
@@ -67,12 +67,13 @@ public class CustomerHandler : MonoBehaviour
     {
         if (currentCustomer == null)
         {
-            int index = UnityEngine.Random.Range(0, 100);
 
             spawnTimer -= Time.deltaTime;
             if (spawnTimer <= 0f)
             {
-                if(karenSpawnChance < index)
+                int index = UnityEngine.Random.Range(0, 100);
+                Debug.Log(index);
+                if(index < karenSpawnChance)
                 {
                     SpawnCustomer(3);
                     karenSpawnChance = 0;

@@ -44,7 +44,7 @@ public class CustomerAnimationHandler : MonoBehaviour
                 monsterAnimator.Play("Squid");
                 break;
             case Customer.Difficulty.KAREN:
-                monsterAnimator.Play("Squid");
+                monsterAnimator.Play("Karen");
                 break;
         }
     }
