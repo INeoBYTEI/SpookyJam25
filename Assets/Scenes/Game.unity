@@ -874,6 +874,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: CounterTop
       objectReference: {fileID: 0}
+    - target: {fileID: 7063302232588956616, guid: 99ba23eebcda21b4b9b0684585efa6ad, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7063302232588956616, guid: 99ba23eebcda21b4b9b0684585efa6ad, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7418899697544429279, guid: 99ba23eebcda21b4b9b0684585efa6ad, type: 3}
       propertyPath: m_Size.x
       value: 11.497766
