@@ -1,10 +1,79 @@
 fileFormatVersion: 2
-guid: c40b1b7b667e59e49a4390ffad07f826
+guid: fbfa4158161d9094caec2d00803446f7
 TextureImporter:
   internalIDToNameTable:
   - first:
       213: -4589026997688773385
     second: Ui_assets_0
+  - first:
+      213: 8086155632314274935
+    second: Ui_assets_1
+  - first:
+      213: 897799080188995491
+    second: Ui_assets_2
+  - first:
+      213: -490596066103047086
+    second: Ui_assets_3
+  - first:
+      213: -8091670931452122150
+    second: Ui_assets_4
+  - first:
+      213: 6865188490479266472
+    second: Ui_assets_5
+  - first:
+      213: -4238501123522441784
+    second: Ui_assets_6
+  - first:
+      213: 9106612523094458013
+    second: Ui_assets_7
+  - first:
+      213: -5516849580769482269
+    second: Ui_assets_8
+  - first:
+      213: -1287597328636504721
+    second: Ui_assets_9
+  - first:
+      213: 4968212486350995756
+    second: Ui_assets_10
+  - first:
+      213: 7437947425142915318
+    second: Ui_assets_11
+  - first:
+      213: 4630614480369966592
+    second: Ui_assets_12
+  - first:
+      213: -6017811439582160682
+    second: Ui_assets_13
+  - first:
+      213: 4481617625871238146
+    second: Ui_assets_14
+  - first:
+      213: -6014286755519980898
+    second: Ui_assets_15
+  - first:
+      213: -4527477303271111130
+    second: Ui_assets_16
+  - first:
+      213: -4354470853759954916
+    second: Ui_assets_17
+  - first:
+      213: -6024054526559337458
+    second: Ui_assets_18
+  - first:
+      213: -7995485769195066937
+    second: Ui_assets_19
+  - first:
+      213: -798819782397701711
+    second: Ui_assets_20
+  - first:
+      213: -4105001071464767513
+    second: Ui_assets_21
+  - first:
+      213: -1664227336403837268
+    second: Ui_assets_22
+  - first:
+      213: -7263543315288591416
+    second: Ui_assets_23
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -135,10 +204,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: a2763268c7aa47244aa3734ee275f47e
-      internalID: 856539092
+      spriteID: 774dd9e84bbc73070800000000000000
+      internalID: 8086155632314274935
       vertices: []
       indices: 
       edges: []
@@ -157,10 +226,10 @@ TextureImporter:
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 2d07b1d333b610d438813de157cb49e1
-      internalID: -86827397
+      spriteID: 3a76656b18f957c00800000000000000
+      internalID: 897799080188995491
       vertices: []
       indices: 
       edges: []
@@ -169,7 +238,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: f997c4de7f116a74781750e330a6a832
+    spriteID: 9d46638a31e56184b8661c07a64c9883
     internalID: 0
     vertices: []
     indices: 
@@ -182,8 +251,8 @@ TextureImporter:
         value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":320.0,"y":240.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       Ui_assets_0: -4589026997688773385
-      Ui_assets_1: 856539092
-      Ui_assets_2: -86827397
+      Ui_assets_1: 8086155632314274935
+      Ui_assets_2: 897799080188995491
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
