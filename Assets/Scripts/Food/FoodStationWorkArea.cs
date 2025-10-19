@@ -5,7 +5,7 @@ public class FoodStationWorkArea : Clickable
     [SerializeField] protected AnimationClip glideIn;
     [SerializeField] protected AnimationClip glideOut;
 
-    Animator animator;
+    Animator transitionAnimator;
     [HideInInspector] public FoodStationStart stationStart;
     protected FoodType foodType;
 
@@ -13,7 +13,7 @@ public class FoodStationWorkArea : Clickable
 
     private void Start()
     {
-        animator = transform.root.GetComponentInChildren<Animator>();
+        transitionAnimator = transform.root.GetComponentInChildren<Animator>();
         transform.root.gameObject.SetActive(false);
     }
 
@@ -23,14 +23,14 @@ public class FoodStationWorkArea : Clickable
         this.foodType = foodType;
         transform.root.gameObject.SetActive(true);
         cover.SetActive(true);
-        animator.Play(glideIn.name);
+        transitionAnimator.Play(glideIn.name);
 
         CustomerHandler.Instance.HideUI();
     }
 
     public void Deactivate()
     {
-        animator.Play(glideOut.name);
+        transitionAnimator.Play(glideOut.name);
         this.enabled = false;
         cover.SetActive(false);
 
@@ -40,6 +40,7 @@ public class FoodStationWorkArea : Clickable
     private void DeactivateSelf()
     {
         CustomerHandler.Instance.ShowUI();
+        stationStart.FullyDethatched();
         transform.root.gameObject.SetActive(false);
     }
 }

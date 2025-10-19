@@ -47,6 +47,7 @@ public class BurgerAssembler : FoodStationWorkArea
 
         foreach (AssemblePiece assemblePiece in assemblePieces)
         {
+            if (!assemblePiece) { continue; }
             Destroy(assemblePiece.transform.parent.gameObject);
         }
     }

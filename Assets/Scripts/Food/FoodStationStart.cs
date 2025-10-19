@@ -11,6 +11,8 @@ public class FoodStationStart : Clickable
     [SerializeField] Sprite normal;
     [SerializeField] Sprite clicked;
 
+    static bool active = false;
+
     private void Awake()
     {
         spriteRenderer = GetComponent<SpriteRenderer>();
@@ -20,9 +22,15 @@ public class FoodStationStart : Clickable
 
     public override void OnClick()
     {   
-        if (workArea.transform.root.gameObject.activeSelf) { return; }
+        if (workArea.transform.root.gameObject.activeSelf || active) { return; }
+        active = true;
         workArea.Activate(foodType);
         spriteRenderer.sprite = clicked;
+    }
+
+    public void FullyDethatched()
+    {
+        active = false;
     }
 
     public override void OnReleaseAny()
