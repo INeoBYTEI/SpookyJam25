@@ -16,18 +16,24 @@ public class WaterBottle : Clickable
     {
         animator.Play(sprayClip.name);
         AudioManager.Instance.PlayAudio("Spray", null, false, 1, true, 0, true);
-        if (CustomerHandler.Instance.currentCustomer.currentState == Customer.CustomerState.LEAVING ||
-        CustomerHandler.Instance.currentCustomer.currentState == Customer.CustomerState.ARRIVING)
+        Customer currentCustomer = CustomerHandler.Instance.currentCustomer;
+        if (currentCustomer.currentState == Customer.CustomerState.LEAVING ||
+        currentCustomer.currentState == Customer.CustomerState.ARRIVING)
         {
             return;
         }
 
-        if (CustomerHandler.Instance.currentCustomer != null)
+        if (currentCustomer.currentDifficulty == Customer.Difficulty.KAREN)
+        {
+            currentCustomer.ForceLeave();
+            InsanityManager.Instance.ModifyInsanity(-10);
+        }
+        else
         {
             InsanityManager.Instance.ModifyInsanity(5);
+            currentCustomer.PlayCustomerVoiceline(currentCustomer.currentDifficulty, Customer.CustomerEmotion.ANGRY);
         }
 
-        CustomerHandler.Instance.currentCustomer.ForceLeave();
     }
 
     public override void OnReleaseSame()

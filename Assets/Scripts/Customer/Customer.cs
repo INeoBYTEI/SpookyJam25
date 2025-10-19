@@ -2,8 +2,8 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.InputSystem;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -25,6 +25,13 @@ public class Customer : MonoBehaviour
         KAREN
     }
 
+    public enum CustomerEmotion
+    {
+        NEUTRAL,
+        THANKS,
+        ANGRY
+    }
+
     public Difficulty currentDifficulty = Difficulty.EASY;
     public CustomerState currentState = CustomerState.ARRIVING;
 
@@ -40,6 +47,7 @@ public class Customer : MonoBehaviour
     private GameObject orderUI;
     private TextMeshProUGUI infoText;
     AudioSource carSource;
+    AudioSource customerSource;
 
     private void Start()
     {
@@ -56,6 +64,7 @@ public class Customer : MonoBehaviour
         orderUI.SetActive(false);
         infoText.gameObject.SetActive(true);
         carSource = GetComponent<AudioSource>();
+        customerSource.AddComponent<AudioSource>();
 
         StartCoroutine(Arrive());
     }
@@ -86,6 +95,7 @@ public class Customer : MonoBehaviour
     {
         currentState = CustomerState.ORDERING;
         AudioManager.Instance.PlayAudio("CarIdle", carSource, true, 1, true, 0, true);
+        PlayCustomerVoiceline(currentDifficulty, CustomerEmotion.NEUTRAL);
         // Initialize ordering behavior
         infoText.text = "Customer is ordering...";
         // > Display order UI
@@ -114,6 +124,16 @@ public class Customer : MonoBehaviour
     {
         currentState = CustomerState.LEAVING;
         orderUI.SetActive(false);
+
+        if (currentDifficulty == Difficulty.KAREN)
+        {
+            PlayCustomerVoiceline(currentDifficulty, CustomerEmotion.ANGRY);
+        }
+        else
+        {
+            PlayCustomerVoiceline(currentDifficulty, CustomerEmotion.THANKS);
+        }
+
         // Initialize leaving behavior
         infoText.text = "Customer is leaving...";
         // > Play leaving animation or effects
@@ -131,6 +151,7 @@ public class Customer : MonoBehaviour
 
     public IEnumerator KarenReorder()
     {
+        PlayCustomerVoiceline(currentDifficulty, CustomerEmotion.ANGRY);
         foreach (var order in orderedMealsBackup)
         {
             order.icon.transform.GetChild(0).gameObject.SetActive(true);
@@ -164,6 +185,41 @@ public class Customer : MonoBehaviour
         foodOrder.icon.transform.SetParent(orderUI.transform, false);
         foodOrder.icon.GetComponent<Image>().sprite = foodReferenceTable.GetSprite(type);
         return foodOrder;
+    }
+
+    public void PlayCustomerVoiceline(Difficulty name, CustomerEmotion emotion)
+    {
+        string soundToPlay = "";
+        switch (name)
+        {
+            case Difficulty.EASY:
+                soundToPlay += "Dark";
+                break;
+            case Difficulty.MEDIUM:
+                soundToPlay += "Gubb";
+                break;
+            case Difficulty.HARD:
+                soundToPlay += "Squid";
+                break;
+            case Difficulty.KAREN:
+                soundToPlay += "Karen";
+                break;
+        }
+
+        switch (emotion)
+        {
+            case CustomerEmotion.NEUTRAL:
+                soundToPlay += "";
+                break;
+            case CustomerEmotion.THANKS:
+                soundToPlay += "Thanks";
+                break;
+            case CustomerEmotion.ANGRY:
+                soundToPlay += "Angry";
+                break;
+        }
+
+        AudioManager.Instance.PlayAudio(soundToPlay, customerSource, false, 1, true, 0, true);
     }
 }
 
