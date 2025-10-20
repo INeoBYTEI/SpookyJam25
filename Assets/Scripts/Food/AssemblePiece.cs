@@ -9,17 +9,10 @@ public class AssemblePiece : MonoBehaviour
     [HideInInspector] public HashSet<AssemblePiece> touching = new();
     [HideInInspector] public BurgerAssembler burgerAssembler;
 
-    TextMeshProUGUI debugText;
-
-    private void Awake()
-    {
-        debugText = GetComponentInChildren<TextMeshProUGUI>();
-    }
 
     private void OnEnable()
     {
         touching.Clear();
-        debugText.text = "0";
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -33,8 +26,6 @@ public class AssemblePiece : MonoBehaviour
                 CheckCompletion();
             }
         }
-
-            debugText.text = touching.Count.ToString();
     }
 
     private void OnTriggerExit2D(Collider2D collision)
@@ -48,8 +39,6 @@ public class AssemblePiece : MonoBehaviour
                 CheckCompletion();
             }
         }
-
-        debugText.text = touching.Count.ToString();
     }
 
     private void CheckCompletion()
