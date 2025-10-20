@@ -72,18 +72,25 @@ public class CustomerHandler : MonoBehaviour
             if (spawnTimer <= 0f)
             {
                 int index = UnityEngine.Random.Range(0, 100);
-                if(index < karenSpawnChance)
+                if (index < karenSpawnChance)
                 {
                     SpawnCustomer(3);
                     karenSpawnChance = 0;
                 }
+                else
+                {
+                    index %= 3;
+                    SpawnCustomer(index);
+                }
+                Debug.Log(index);
+                /* [Archived] Slow Progression of difficulty
                 else if (customersServed < 2)
                 {
                     SpawnCustomer(0);
                 }
                 else if (customersServed < 7)
                 {
-                    index %= 2; 
+                    index %= 2;
                     SpawnCustomer(index);
                 }
                 else if (customersServed < 15)
@@ -97,6 +104,7 @@ public class CustomerHandler : MonoBehaviour
                     index %= 3;
                     SpawnCustomer(index);
                 }
+                */
             }
         }  
     }
