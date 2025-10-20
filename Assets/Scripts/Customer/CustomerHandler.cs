@@ -82,7 +82,6 @@ public class CustomerHandler : MonoBehaviour
                     index %= 3;
                     SpawnCustomer(index);
                 }
-                Debug.Log(index);
                 /* [Archived] Slow Progression of difficulty
                 else if (customersServed < 2)
                 {
